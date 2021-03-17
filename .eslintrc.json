@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "curly": ["error", "all"],
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  },
+  "overrides": [
+    {
+      "files": "./server/**/*.js",
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "files": ["./client/**/*.js", "*.jsx"],
+      "env": {
+        "node": false,
+        "browser": true
+      }
+    }
+  ]
+}

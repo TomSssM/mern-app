@@ -23,6 +23,10 @@
   "author": "TomSssM",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.22.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -36,5 +40,9 @@
     "webpack": "^5.27.1",
     "webpack-cli": "^4.5.0",
     "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "core-js": "^3.9.1"
   }
 }

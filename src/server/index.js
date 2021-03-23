@@ -10,6 +10,13 @@ class Babel extends Map {
   }
 }
 
+const obj = {};
+const func = undefined;
+
+console.log(obj?.name?.lol);
+console.log(func?.());
+console.log(func ?? obj);
+
 console.log(a);
 console.log(b);
 console.log(new Babel());

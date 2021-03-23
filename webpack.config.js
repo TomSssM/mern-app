@@ -14,14 +14,17 @@ const babelLoader = {
 };
 
 const client = {
-  entry: './client/index.jsx',
+  entry: './src/client/index.jsx',
   target: 'web',
   mode: 'development', // todo: make dynamic
   devtool: 'source-map', // todo: make dynamic as well ( most likely 'nosources-source-map' for production)
   output: {
     path: path.resolve(__dirname, 'build', 'static'),
-    filename: '[name].[contenthash].js',
+    filename: '[name].[contenthash].bundle.js',
     clean: true,
+  },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
   },
   optimization: {
     moduleIds: 'deterministic',
@@ -47,7 +50,7 @@ const client = {
 };
 
 const server = {
-  entry: './server/index.js',
+  entry: './src/server/index.js',
   target: 'node',
   mode: 'development', // todo: make dynamic
   devtool: 'source-map', // todo: make dynamic as well ( most likely 'nosources-source-map' for production)

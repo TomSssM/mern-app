@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "Usual MERN Application",
   "scripts": {
-    "prettier": "prettier .",
-    "eslint": "eslint --ext .jsx,.js",
+    "prettier": "prettier '.' '.*rc'",
+    "eslint": "eslint --ext '.jsx,.js'",
     "lint": "npm-run-all 'lint:*'",
     "lint:eslint": "npm run eslint .",
     "lint:prettier": "npm run prettier -- --check",

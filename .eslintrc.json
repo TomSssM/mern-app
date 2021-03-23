@@ -20,7 +20,7 @@
   },
   "overrides": [
     {
-      "files": "./server/**/*.js",
+      "files": "./src/server/**/*.js",
       "env": {
         "node": true,
         "browser": false
@@ -30,7 +30,7 @@
       }
     },
     {
-      "files": ["./client/**/*.js", "*.jsx"],
+      "files": ["./src/client/**/*.js", "*.jsx"],
       "env": {
         "node": false,
         "browser": true

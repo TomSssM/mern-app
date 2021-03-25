@@ -420,7 +420,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
-  exact: true,
   path: "/",
   component: _components_App__WEBPACK_IMPORTED_MODULE_5__.default
 })), document.querySelector('#root'));
@@ -863,4 +862,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.ed3e47520a3de6695fbc.bundle.js.map
+//# sourceMappingURL=main.5607c6055dfd43e9675d.bundle.js.map

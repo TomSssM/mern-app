@@ -1,3 +1,5 @@
-const rawPort = +process.env.PORT;
+export const LOCAL_PORT = 8080;
 
-export const PORT = Number.isNaN(rawPort) ? 8080 : rawPort;
+const forcePort = +process.env.PORT;
+
+export const PORT = Number.isNaN(forcePort) ? LOCAL_PORT : forcePort;

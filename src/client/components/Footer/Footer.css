@@ -1,9 +1,11 @@
 .footer {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row-reverse nowrap;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 11px;
+  text-transform: lowercase;
 }
 
 .footer__text {

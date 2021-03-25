@@ -6,9 +6,10 @@ const FooterText = ({ children }) => (
   <span className="footer__text">{children}</span>
 );
 
-export const Footer = ({ className }) => (
+const Footer = ({ className }) => (
   <footer className={clsx('footer', className)}>
-    <FooterText>hi</FooterText>
-    <FooterText>there</FooterText>
+    <FooterText>все права защищены</FooterText>
   </footer>
 );
+
+export default Footer;

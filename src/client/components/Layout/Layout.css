@@ -5,11 +5,11 @@
   padding-top: 40px;
 }
 
-.layout__upper-splitter {
+.layout__top-splitter {
   margin-bottom: 20px;
 }
 
-.layout__lower-splitter {
+.layout__bottom-splitter {
   margin-top: 20px;
 }
 
@@ -17,6 +17,6 @@
   margin-bottom: 30px;
 }
 
-.layout__content-wrapper {
+.layout__content {
   flex: 1;
 }

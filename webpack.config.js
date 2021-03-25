@@ -65,6 +65,8 @@ const client = {
   ],
 };
 
+// todo: make watch mode not re-build on 'npm run dev'
+
 const server = {
   entry: './src/server/index.js',
   target: 'node',

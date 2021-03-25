@@ -2,8 +2,10 @@ import React from 'react';
 import Layout from '../Layout';
 import Products from '../Products';
 
-export const App = () => (
+const App = () => (
   <Layout>
     <Products />
   </Layout>
 );
+
+export default App;

@@ -16,6 +16,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(STATIC_PATH, 'index.html'));
 });
 
+// todo: error handling
+
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}...`);
 });

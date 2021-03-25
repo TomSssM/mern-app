@@ -59,6 +59,8 @@ const client = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'MERN App',
+      template: path.resolve(__dirname, 'src', 'client', 'index.html'),
+      favicon: path.resolve(__dirname, 'public', 'favicon.png'),
     }),
   ],
 };

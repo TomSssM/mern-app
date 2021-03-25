@@ -1,14 +1,12 @@
-import { MESSAGE } from '../config';
-import { join } from '../shared';
-import { Button } from './Button';
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import App from './components/App';
+import './index.css';
 
-function component() {
-  const element = document.createElement('div');
-
-  element.innerHTML = join(['>', MESSAGE], ' ');
-  element.innerHTML += Button();
-
-  return element;
-}
-
-document.body.appendChild(component());
+render(
+  <Router>
+    <Route exact path="/" component={App} />
+  </Router>,
+  document.querySelector('#root')
+);

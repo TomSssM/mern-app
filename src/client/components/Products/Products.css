@@ -1,0 +1,32 @@
+.products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.product {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: 300px;
+  height: 140px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 4px #d3d3d3;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+.product:hover {
+  box-shadow: 0 0 20px #b9b9b9;
+}
+.product__image {
+  flex: 1;
+}
+.product__name {
+  display: inline-block;
+  margin: 10px;
+}

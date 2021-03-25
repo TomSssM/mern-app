@@ -10,8 +10,10 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "webpack",
-    "watch": "webpack --watch",
-    "server": "nodemon --quiet --delay 1500ms",
+    "prebuild": "npm run lint",
+    "watch": "npm run build:dev -- --watch",
+    "server": "nodemon --quiet --delay 400ms",
+    "prestart": "npm run build",
     "start": "node ./build/server.js",
     "dev": "npm-run-all 'build:dev' --parallel watch server",
     "format": "prettier '.' '.*rc'",
@@ -55,6 +57,7 @@
   "dependencies": {
     "@babel/runtime": "^7.13.10",
     "core-js": "^3.9.1",
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0"

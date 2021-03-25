@@ -1,0 +1,22 @@
+.layout {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.layout__upper-splitter {
+  margin-bottom: 20px;
+}
+
+.layout__lower-splitter {
+  margin-top: 20px;
+}
+
+.layout__logo {
+  margin-bottom: 30px;
+}
+
+.layout__content-wrapper {
+  flex: 1;
+}

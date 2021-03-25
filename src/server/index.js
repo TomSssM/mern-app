@@ -1,23 +1,21 @@
-import { join } from '../shared';
+import path from 'path';
+import express from 'express';
+import { PORT, STATIC_PATH } from '../config';
 
-const a = Promise.resolve();
-const b = new Map();
+const app = express();
 
-class Babel extends Map {
-  // eslint-disable-next-line no-useless-constructor
-  constructor() {
-    super();
-  }
-}
+app.use(express.json());
 
-const obj = {};
-const func = undefined;
+app.get('/index.html', (req, res) => {
+  res.redirect('/');
+});
 
-console.log(obj?.name?.lol);
-console.log(func?.());
-console.log(func ?? obj);
+app.use(express.static(STATIC_PATH));
 
-console.log(a);
-console.log(b);
-console.log(new Babel());
-console.log(join(['a', 'b', 'c'], ' '));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(STATIC_PATH, 'index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`server listening on ${PORT}...`);
+});

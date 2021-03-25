@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer__text {
+  color: gray;
+}

@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "watch": "npm run build:dev -- --watch",
-    "server": "nodemon --quiet --delay 100ms",
+    "server": "nodemon --watch build/server.js --quiet",
     "prestart": "npm run build",
     "start": "node ./build/server.js",
     "dev": "npm-run-all build:dev --parallel watch server",
@@ -55,6 +55,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.27.1",
     "webpack-cli": "^4.5.0",
+    "webpack-merge": "^5.7.3",
     "webpack-node-externals": "^2.5.2"
   },
   "dependencies": {

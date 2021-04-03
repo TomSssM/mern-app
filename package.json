@@ -8,14 +8,15 @@
     "*.css"
   ],
   "scripts": {
-    "watch": "npm run build:dev -- --watch",
-    "server": "nodemon --watch build/server.js --quiet",
+    "start": "NODE_ENV=production node ./build/server/index.js",
+    "dev": "NODE_ENV=development npm-run-all --parallel client server",
+    "build": "npm-run-all 'build:*'",
+    "build:server": "babel src --out-dir build --ignore src/client",
+    "build:client": "webpack --config webpack.prod.js",
     "prestart": "npm run build",
-    "start": "node ./build/server.js",
-    "dev": "npm-run-all build:dev --parallel watch server",
     "prebuild": "npm run lint",
-    "build": "webpack",
-    "build:dev": "webpack",
+    "server": "nodemon src/server/index.js --quiet --exec babel-node",
+    "client": "webpack serve --open --config webpack.dev.js",
     "format": "prettier '.' '.*rc'",
     "lint": "npm-run-all 'lint:*'",
     "lint:eslint": "eslint --ext '.jsx,.js' .",
@@ -23,8 +24,7 @@
     "fix": "npm-run-all 'fix:*'",
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:format": "npm run format -- --write",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build/static"
+    "predeploy": "npm run build"
   },
   "keywords": [
     "mern",
@@ -34,7 +34,9 @@
   "author": "TomSssM",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.13",
     "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@babel/preset-react": "^7.12.13",
@@ -47,7 +49,6 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^5.3.1",
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
@@ -55,6 +56,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.27.1",
     "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3",
     "webpack-node-externals": "^2.5.2"
   },

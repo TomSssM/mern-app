@@ -1,23 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
 
-const babelLoader = {
-  test: /\.js(x)?$/,
-  exclude: /node_modules/,
-  use: {
-    loader: 'babel-loader',
-    options: {
-      cacheDirectory: true,
-    },
+module.exports = {
+  name: 'client',
+  entry: {
+    app: path.join(__dirname, 'src/client/index.jsx'),
   },
-};
-
-const client = {
-  entry: './src/client/index.jsx',
   target: 'web',
-  mode: 'development', // todo: make dynamic
-  devtool: 'source-map', // todo: make dynamic as well ( most likely 'nosources-source-map' for production)
   output: {
     path: path.resolve(__dirname, 'build', 'static'),
     filename: '[name].[contenthash].bundle.js',
@@ -41,9 +30,18 @@ const client = {
   },
   module: {
     rules: [
-      babelLoader,
       {
-        test: /\.css$/i,
+        test: /\.js(x)?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          },
+        },
+      },
+      {
+        test: /\.css$/i, // todo: add scss
         use: ['style-loader', 'css-loader'],
       },
       {
@@ -64,22 +62,3 @@ const client = {
     }),
   ],
 };
-
-// todo: make watch mode not re-build on 'npm run dev'
-
-const server = {
-  entry: './src/server/index.js',
-  target: 'node',
-  mode: 'development', // todo: make dynamic
-  devtool: 'source-map', // todo: make dynamic as well ( most likely 'nosources-source-map' for production)
-  externals: [nodeExternals()],
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'server.js',
-  },
-  module: {
-    rules: [babelLoader],
-  },
-};
-
-module.exports = [client, server];

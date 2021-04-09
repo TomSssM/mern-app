@@ -41,8 +41,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i, // todo: add scss
-        use: ['style-loader', 'css-loader'],
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -57,7 +57,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'MERN App',
-      template: path.resolve(__dirname, 'src', 'client', 'index.html'),
+      template: path.resolve(__dirname, 'public', 'index.html'),
       favicon: path.resolve(__dirname, 'public', 'favicon.png'),
     }),
   ],

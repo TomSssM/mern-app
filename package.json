@@ -5,12 +5,12 @@
   "description": "Usual MERN Application",
   "main": "build/server.js",
   "sideEffects": [
-    "*.css"
+    "*.scss"
   ],
   "scripts": {
     "start": "NODE_ENV=production node ./build/server/index.js",
     "dev": "NODE_ENV=development npm-run-all --parallel client server",
-    "build": "npm-run-all 'build:*'",
+    "build": "NODE_ENV=production npm-run-all 'build:*'",
     "build:server": "babel src --out-dir build --ignore src/client",
     "build:client": "webpack --config webpack.prod.js",
     "prestart": "npm run build",
@@ -19,10 +19,10 @@
     "client": "webpack serve --open --config webpack.dev.js",
     "format": "prettier '.' '.*rc'",
     "lint": "npm-run-all 'lint:*'",
-    "lint:eslint": "eslint --ext '.jsx,.js' .",
+    "lint:code": "eslint --ext '.jsx,.js' .",
     "lint:format": "npm run format -- --check",
     "fix": "npm-run-all 'fix:*'",
-    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix:code": "npm run lint:eslint -- --fix",
     "fix:format": "npm run format -- --write",
     "predeploy": "npm run build"
   },
@@ -53,6 +53,8 @@
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
     "prettier": "2.2.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.27.1",
     "webpack-cli": "^4.5.0",
@@ -62,6 +64,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
+    "classnames": "^2.3.1",
     "core-js": "^3.9.1",
     "express": "^4.17.1",
     "react": "^17.0.2",

@@ -1,14 +1,10 @@
 import React from 'react';
-import './Footer.css';
-import { clsx } from '../../../shared/utils';
-
-const FooterText = ({ children }) => (
-  <span className="footer__text">{children}</span>
-);
+import classnames from 'classnames';
+import './Footer.scss';
 
 const Footer = ({ className }) => (
-  <footer className={clsx('footer', className)}>
-    <FooterText>все права защищены</FooterText>
+  <footer className={classnames('Footer', className)}>
+    <span className="Footer-Text">все права защищены</span>
   </footer>
 );
 

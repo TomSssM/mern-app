@@ -1,13 +1,12 @@
-.footer {
+.Footer {
   display: flex;
   flex-flow: row-reverse nowrap;
   justify-content: space-between;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding: 7px 12px;
   font-size: 11px;
   text-transform: lowercase;
-}
 
-.footer__text {
-  color: gray;
+  &-Text {
+    color: gray;
+  }
 }

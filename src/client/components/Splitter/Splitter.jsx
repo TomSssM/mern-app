@@ -1,9 +1,15 @@
 import React from 'react';
-import './Splitter.css';
-import { clsx } from '../../../shared/utils';
+import classNames from 'classnames';
+import './Splitter.scss';
 
-const Splitter = ({ className }) => (
-  <div className={clsx('splitter', className)} />
+const Splitter = ({ className, fullwidth = false }) => (
+  <div
+    className={classNames(
+      'Splitter',
+      fullwidth && 'Splitter_fullwidth',
+      className,
+    )}
+  />
 );
 
 export default Splitter;

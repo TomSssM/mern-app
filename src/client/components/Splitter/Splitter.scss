@@ -1,0 +1,9 @@
+.Splitter {
+  height: 1px;
+  background-color: black;
+  margin: 4px 12px;
+
+  &_fullwidth {
+    margin: 0;
+  }
+}

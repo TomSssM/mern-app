@@ -14,7 +14,8 @@ const data = [
   {
     id: 789,
     name: 'Клавиатуры',
-    image: 'https://img.moyo.ua/img/products/4527/90_1500.jpg?1602514003',
+    image:
+      'https://img.moyo.ua/img/products/4527/90_1500.jpg?1602514003',
   },
   {
     id: 112,

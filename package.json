@@ -22,7 +22,7 @@
     "lint:code": "eslint --ext '.jsx,.js' .",
     "lint:format": "npm run format -- --check",
     "fix": "npm-run-all 'fix:*'",
-    "fix:code": "npm run lint:eslint -- --fix",
+    "fix:code": "npm run lint:code -- --fix",
     "fix:format": "npm run format -- --write",
     "predeploy": "npm run build"
   },
@@ -69,6 +69,7 @@
     "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-intl": "^5.15.7",
     "react-router-dom": "^5.2.0"
   }
 }

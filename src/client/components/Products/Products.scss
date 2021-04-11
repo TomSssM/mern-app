@@ -41,7 +41,11 @@
   }
 
   &-Paranja {
-    background-image: linear-gradient(to bottom, transparent 50%, #ffffff);
+    background-image: linear-gradient(
+      to bottom,
+      transparent 50%,
+      #ffffff
+    );
   }
 
   &-Name {

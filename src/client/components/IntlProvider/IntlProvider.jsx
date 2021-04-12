@@ -27,7 +27,7 @@ const IntlProvider = ({ children }) => {
       locale,
       setLocale,
     }),
-    [locale, setLocale],
+    [locale],
   );
 
   return (

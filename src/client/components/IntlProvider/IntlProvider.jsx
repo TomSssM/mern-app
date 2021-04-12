@@ -36,9 +36,7 @@ const IntlProvider = ({ children }) => {
       messages={messages}
       defaultLocale={DEFAULT_LOCALE}
     >
-      <LangContext.Provider value={value}>
-        {children}
-      </LangContext.Provider>
+      <LangContext.Provider value={value}>{children}</LangContext.Provider>
     </IntlProviderBase>
   );
 };

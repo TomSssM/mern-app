@@ -8,7 +8,7 @@ module.exports = {
   },
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'build', 'static'),
+    path: path.join(__dirname, 'build', 'static'),
     filename: '[name].[contenthash].bundle.js',
     clean: true,
   },
@@ -42,7 +42,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -57,8 +57,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'MERN App',
-      template: path.resolve(__dirname, 'public', 'index.html'),
-      favicon: path.resolve(__dirname, 'public', 'favicon.png'),
+      template: path.join(__dirname, 'public', 'index.html'),
+      favicon: path.join(__dirname, 'public', 'favicon.png'),
     }),
   ],
 };

@@ -26,7 +26,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // todo: error handling
-// todo: favicon doesnt load on dev server
 
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}...`);

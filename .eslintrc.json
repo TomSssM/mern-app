@@ -22,7 +22,9 @@
     "react/jsx-props-no-spreading": "off",
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["webpack.*.js"] }
+      {
+        "devDependencies": ["webpack.*.js", "postcss.config.js"]
+      }
     ]
   },
   "overrides": [

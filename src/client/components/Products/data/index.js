@@ -1,28 +1,29 @@
+import cable from './assets/cable.jpg';
+import hardDrive from './assets/hard-drive.jpg';
+import keyboard from './assets/keyboard.jpg';
+import monitor from './assets/monitor.jpg';
+
 const data = [
   {
     id: 123,
     name: 'Жесткие диски',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1200px-Laptop-hard-drive-exposed.jpg',
+    image: hardDrive,
   },
   {
     id: 456,
     name: 'Мониторы',
-    image:
-      'https://i2.rozetka.ua/goods/10437496/acer_um_qw0ee_001_images_10437496778.jpg',
+    image: monitor,
   },
   {
     id: 789,
     name: 'Клавиатуры',
-    image:
-      'https://img.moyo.ua/img/products/4527/90_1500.jpg?1602514003',
+    image: keyboard,
   },
   {
     id: 112,
     name: 'Кабеля',
     position: ['top', 'left'],
-    image:
-      'https://api.kramatorskpost.com/storage/article-images/wp-content/31271/-655x430.jpg',
+    image: cable,
   },
 ];
 

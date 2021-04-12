@@ -16,11 +16,7 @@ const LangSwitcher = () => {
   );
 
   return (
-    <select
-      className="LangSwitcher"
-      value={locale}
-      onChange={onChange}
-    >
+    <select className="LangSwitcher" value={locale} onChange={onChange}>
       {AVAILABLE_LOCALES.map(id => (
         <option key={id} value={id}>
           {intl.formatMessage({

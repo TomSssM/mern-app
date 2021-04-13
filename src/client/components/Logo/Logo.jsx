@@ -3,17 +3,21 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './Logo.scss';
 
-const Logo = ({ className }) => (
-  <div className={classNames('Logo', className)}>
+const Logo = () => (
+  <div className="Logo">
     <span className="Logo-Text">
       <FormattedMessage
         id="company-name"
-        defaultMessage="Computers"
+        defaultMessage="Chip"
         description="Company name"
       />
     </span>
     <span className={classNames('Logo-Text', 'Logo-Text_style_sub')}>
-      И.П. Кортасов
+      <FormattedMessage
+        id="company-owner"
+        defaultMessage="Vitali Kartasau"
+        description="Company owner"
+      />
     </span>
   </div>
 );

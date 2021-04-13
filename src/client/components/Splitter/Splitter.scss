@@ -1,6 +1,7 @@
 .Splitter {
-  height: 1px;
-  background-color: black;
+  display: block;
+  border: none;
+  border-top: 1px solid gray;
   margin: 4px 12px;
 
   &_fullwidth {

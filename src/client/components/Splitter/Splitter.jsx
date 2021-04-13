@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import './Splitter.scss';
 
 const Splitter = ({ className, fullwidth = false }) => (
-  <div
+  <hr
     className={classNames(
       'Splitter',
       fullwidth && 'Splitter_fullwidth',

@@ -1,12 +1,18 @@
 import React from 'react';
-import classnames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import LangSwitcher from '../LangSwitcher';
 import './Footer.scss';
 
-const Footer = ({ className }) => (
-  <footer className={classnames('Footer', className)}>
+const Footer = () => (
+  <footer className="Footer">
     <LangSwitcher />
-    <span className="Footer-Text">все права защищены</span>
+    <span className="Footer-Text">
+      <FormattedMessage
+        id="copyright"
+        defaultMessage="All rights reserved"
+        description="Footer text"
+      />
+    </span>
   </footer>
 );
 

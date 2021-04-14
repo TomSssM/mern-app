@@ -8,14 +8,14 @@
     "*.scss"
   ],
   "scripts": {
-    "start": "NODE_ENV=production node -r dotenv/config ./build/server/index.js",
+    "start": "NODE_ENV=production node --require dotenv/config ./build/server/index.js",
     "dev": "NODE_ENV=development npm-run-all --parallel client server",
     "build": "NODE_ENV=production npm-run-all 'build:*'",
     "build:server": "babel src --out-dir build --ignore src/client",
     "build:client": "webpack --config webpack.prod.js",
     "prestart": "npm run build",
     "prebuild": "npm run lint",
-    "server": "nodemon src/server/index.js --quiet --exec 'babel-node -r dotenv/config'",
+    "server": "nodemon src/server/index.js --quiet --exec babel-node --require dotenv/config",
     "client": "webpack serve --open --config webpack.dev.js",
     "format": "prettier '.' '.*rc'",
     "lint": "npm-run-all 'lint:*'",

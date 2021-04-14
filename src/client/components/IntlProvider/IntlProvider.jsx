@@ -1,7 +1,7 @@
 import React, { createContext, useState, useMemo } from 'react';
 import { IntlProvider as IntlProviderBase } from 'react-intl';
-import { LOCALES, DEFAULT_LOCALE } from '../../../config/locales';
 import { parseNavigatorLanguage } from '../../utils';
+import { DEFAULT_LOCALE } from '../../../shared/const/locales';
 import messagesInRussian from '../../../../public/locales/ru.json';
 import messagesInEnglish from '../../../../public/locales/en.json';
 
@@ -13,9 +13,8 @@ const IntlProvider = ({ children }) => {
   const [locale, setLocale] = useState(navigatorLanguage);
 
   const messages = useMemo(() => {
-    const { EN } = LOCALES;
     switch (locale) {
-      case EN:
+      case 'en':
         return messagesInEnglish;
       default:
         return messagesInRussian;

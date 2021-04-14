@@ -1,6 +1,8 @@
 import path from 'path';
 import express from 'express';
-import { PORT, STATIC_PATH } from '../config';
+import config from '../config';
+
+const { PORT, STATIC_PATH } = config;
 
 const app = express();
 
@@ -20,12 +22,13 @@ if (process.env.NODE_ENV === 'production') {
 
 if (process.env.NODE_ENV === 'development') {
   app.get('*', (req, res) => {
-    res.status(404);
-    res.end();
+    res.status(404).end();
   });
 }
 
-// todo: error handling
+app.use((err, req, res, _next) => {
+  res.status(500).end();
+});
 
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}...`);

@@ -1,8 +1,7 @@
-import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from '../config/locales';
 import { select } from '../shared/utils';
+import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from '../shared/const/locales';
 
 export const parseNavigatorLanguage = () => {
-  const { language: rawLanguage } = navigator;
-  const [language] = rawLanguage.split('-');
+  const [language] = navigator.language.split('-');
   return select(language, AVAILABLE_LOCALES, DEFAULT_LOCALE);
 };

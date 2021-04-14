@@ -23,6 +23,15 @@
     "import/prefer-default-export": "off",
     "curly": ["error", "all"],
     "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "import/no-extraneous-dependencies": [

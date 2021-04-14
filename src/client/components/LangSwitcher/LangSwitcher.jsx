@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import { useIntl } from 'react-intl';
-import { AVAILABLE_LOCALES } from '../../../config/locales';
+import { AVAILABLE_LOCALES } from '../../../shared/const/locales';
 import { LangContext } from '../IntlProvider';
 import './LangSwitcher.scss';
 

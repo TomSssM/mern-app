@@ -1,13 +1,13 @@
 .Footer {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 7px 12px;
   font-size: 11px;
   text-transform: lowercase;
 
   &-Text {
-    color: gray;
+    color: #808080;
   }
 }

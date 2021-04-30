@@ -1,15 +1,15 @@
 .Logo {
   font-size: 40px;
-  text-align: center;
   font-weight: bold;
+  text-align: center;
 
   &-Text {
     display: block;
 
     &_style {
       &_sub {
+        color: #808080;
         font-size: 30px;
-        color: gray;
       }
     }
   }

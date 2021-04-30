@@ -1,11 +1,11 @@
 .Layout {
   display: flex;
-  flex-flow: column nowrap;
   min-height: 100vh;
+  flex-flow: column nowrap;
   padding-top: 40px;
 
   &-Content {
-    padding: 20px 0;
     flex: 1;
+    padding: 20px 0;
   }
 }

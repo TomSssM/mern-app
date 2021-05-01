@@ -26,7 +26,8 @@
     "fix:code": "npm run lint:code -- --fix",
     "fix:format": "npm run format -- --write",
     "fix:styles": "npm run lint:styles -- --fix",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "prepare": "husky install"
   },
   "keywords": [
     "mern",
@@ -53,6 +54,8 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^5.2.0",
@@ -81,5 +84,14 @@
     "react-dom": "^17.0.2",
     "react-intl": "^5.15.7",
     "react-router-dom": "^5.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.scss": "stylelint --fix",
+    ".*rc": "prettier --write",
+    "*.json": "prettier --write"
   }
 }

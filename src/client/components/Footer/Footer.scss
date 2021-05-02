@@ -3,11 +3,13 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 12px;
-  font-size: 11px;
+  padding: var(--size-n) 0;
+  border-top: var(--border-secondary);
+  margin-top: var(--size-n);
+  font-size: var(--font-size-secondary);
   text-transform: lowercase;
 
   &-Text {
-    color: #808080;
+    color: var(--color-secondary);
   }
 }

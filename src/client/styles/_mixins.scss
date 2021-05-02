@@ -1,0 +1,8 @@
+%full-width {
+  margin: 0 calc(-1 * var(--main-offset));
+}
+
+%link-reset {
+  color: var(--color-primary);
+  text-decoration: none;
+}

@@ -11,6 +11,7 @@ module.exports = {
     path: path.join(__dirname, 'build', 'static'),
     filename: '[name].[contenthash].bundle.js',
     clean: true,
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],

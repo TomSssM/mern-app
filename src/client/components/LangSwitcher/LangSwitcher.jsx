@@ -2,7 +2,6 @@ import React, { useCallback, useContext } from 'react';
 import { useIntl } from 'react-intl';
 import { AVAILABLE_LOCALES } from '../../../shared/const/locales';
 import { LangContext } from '../IntlProvider';
-import './LangSwitcher.scss';
 
 const LangSwitcher = () => {
   const { setLocale, locale } = useContext(LangContext);

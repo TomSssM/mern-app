@@ -1,16 +1,16 @@
-import React, { createContext, useState, useMemo } from 'react';
+import React, { createContext, useState, useMemo, useEffect } from 'react';
 import { IntlProvider as IntlProviderBase } from 'react-intl';
-import { parseNavigatorLanguage } from '../../utils';
+import { LOCALE_LS_KEY, getInitialLocale } from './utils';
 import { DEFAULT_LOCALE } from '../../../shared/const/locales';
 import messagesInRussian from '../../../../public/locales/ru.json';
 import messagesInEnglish from '../../../../public/locales/en.json';
 
 export const LangContext = createContext();
 
-const navigatorLanguage = parseNavigatorLanguage();
+const initialLocale = getInitialLocale();
 
 const IntlProvider = ({ children }) => {
-  const [locale, setLocale] = useState(navigatorLanguage);
+  const [locale, setLocale] = useState(initialLocale);
 
   const messages = useMemo(() => {
     switch (locale) {
@@ -18,6 +18,12 @@ const IntlProvider = ({ children }) => {
         return messagesInEnglish;
       default:
         return messagesInRussian;
+    }
+  }, [locale]);
+
+  useEffect(() => {
+    if (locale) {
+      localStorage.setItem(LOCALE_LS_KEY, locale);
     }
   }, [locale]);
 

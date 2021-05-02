@@ -8,22 +8,26 @@ const data = [
     id: 123,
     name: 'Жесткие диски',
     image: hardDrive,
+    products: [],
   },
   {
     id: 456,
     name: 'Мониторы',
     image: monitor,
+    products: [],
   },
   {
     id: 789,
     name: 'Клавиатуры',
     image: keyboard,
+    products: [],
   },
   {
     id: 112,
     name: 'Кабеля',
     position: ['top', 'left'],
     image: cable,
+    products: [],
   },
 ];
 

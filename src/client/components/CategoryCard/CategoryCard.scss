@@ -1,24 +1,22 @@
-.Products {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-}
+@use '../../styles/mixins';
 
-.Product {
+.CategoryCard {
+  @extend %link-reset;
+
   display: flex;
   overflow: hidden;
   width: 100%;
   max-width: 300px;
   height: 140px;
   flex-flow: column nowrap;
-  margin: 10px;
+  margin: var(--size-xm);
   border-radius: 10px;
-  box-shadow: 0 0 4px #d3d3d3;
+  box-shadow: 0 0 4px var(--color-secondary-light);
   cursor: pointer;
   transition: all 0.2s ease-out;
 
   &:hover {
-    box-shadow: 0 0 20px #b9b9b9;
+    box-shadow: 0 0 20px var(--color-secondary-lighter);
   }
 
   &-ImageContainer {
@@ -41,11 +39,15 @@
   }
 
   &-Paranja {
-    background-image: linear-gradient(to bottom, transparent 50%, #fff);
+    background-image: linear-gradient(
+      to bottom,
+      transparent 50%,
+      var(--background-primary)
+    );
   }
 
   &-Name {
     display: inline-block;
-    margin: 10px;
+    margin: var(--size-xm);
   }
 }

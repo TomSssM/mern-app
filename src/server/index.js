@@ -20,13 +20,8 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-if (process.env.NODE_ENV === 'development') {
-  app.get('*', (req, res) => {
-    res.status(404).end();
-  });
-}
-
-app.use((err, req, res, _next) => {
+app.use((error, req, res, _next) => {
+  console.error('error:', error);
   res.status(500).end();
 });
 

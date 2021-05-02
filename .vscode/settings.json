@@ -30,5 +30,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
-  }
+  },
+  "stylelint.validate": ["html", "scss"]
 }

@@ -86,12 +86,8 @@
     "react-router-dom": "^5.2.0"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
+    "*.{js,jsx}": "eslint --fix",
     "*.scss": "stylelint --fix",
-    ".*rc": "prettier --write",
-    "*.json": "prettier --write"
+    "*.{js,jsx,json,md}": "prettier --write"
   }
 }

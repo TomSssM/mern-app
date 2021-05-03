@@ -1,9 +1,15 @@
 :root {
   --color-primary: #000;
+  --color-background: #fff;
+  --color-control: #0059ff;
+  --color-control-light: #4476ff;
+  --color-control-dark: #003cff;
   --color-secondary: #808080;
-  --color-secondary-light: #d3d3d3;
   --color-secondary-lighter: #b9b9b9;
-  --background-primary: #fff;
+  --color-secondary-light: #d3d3d3;
+  --color-action: #4dd100;
+  --color-action-light: #68ff24;
+  --color-action-dark: #3c8610;
   --size-xxs: 1px;
   --size-xs: 2px;
   --size-s: 4px;
@@ -17,4 +23,6 @@
   --font-size-secondary: 11px;
   --border-secondary: var(--size-xxs) solid var(--color-secondary);
   --main-offset: var(--size-m);
+  --transition: 0.1s;
+  --transition-slower: 0.2s;
 }

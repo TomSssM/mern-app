@@ -13,7 +13,7 @@
   border-radius: 10px;
   box-shadow: 0 0 4px var(--color-secondary-light);
   cursor: pointer;
-  transition: all 0.2s ease-out;
+  transition: box-shadow var(--transition-slower) ease-out;
 
   &:hover {
     box-shadow: 0 0 20px var(--color-secondary-lighter);
@@ -42,7 +42,7 @@
     background-image: linear-gradient(
       to bottom,
       transparent 50%,
-      var(--background-primary)
+      var(--color-background)
     );
   }
 

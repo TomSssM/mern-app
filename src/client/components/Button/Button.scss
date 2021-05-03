@@ -1,0 +1,92 @@
+@use '../../styles/mixins';
+
+$sizes: xm, m, l, xl;
+
+.Button {
+  @extend %button-reset;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  border: var(--size-xxs) solid var(--button-border-color);
+  border-radius: var(--size-xn);
+  color: var(--color-primary);
+  transition: var(--transition) all ease-out;
+
+  &_type {
+    &_link {
+      @extend %link-reset;
+    }
+  }
+
+  &_primary,
+  &:hover {
+    background-color: var(--button-background-color);
+    color: var(--color-background);
+  }
+
+  &:hover {
+    box-shadow: 0 2px 4px var(--button-shadow-color);
+  }
+
+  &:active {
+    border-color: transparent;
+    background-color: var(--button-active-color);
+    box-shadow: none;
+  }
+
+  &_size {
+    @each $size in $sizes {
+      &_#{$size} {
+        font-size: var(--size-#{$size});
+        line-height: var(--size-#{$size});
+      }
+    }
+
+    &_xm {
+      padding: var(--size-xs) var(--size-xm);
+    }
+
+    &_m {
+      padding: var(--size-s) var(--size-m);
+    }
+
+    &_l {
+      padding: var(--size-xn) var(--size-l);
+    }
+
+    &_xl {
+      padding: var(--size-n) var(--size-xl);
+    }
+  }
+
+  &_theme {
+    &_clear {
+      --button-border-color: var(--color-secondary-lighter);
+      --button-shadow-color: var(--color-secondary-light);
+      --button-background-color: var(--color-background);
+      --button-active-color: var(--color-secondary-light);
+
+      &:hover {
+        --button-border-color: transparent;
+
+        color: var(--color-primary);
+      }
+    }
+
+    &_action {
+      --button-border-color: var(--color-action);
+      --button-shadow-color: var(--color-action-dark);
+      --button-background-color: var(--button-border-color);
+      --button-active-color: var(--color-action-light);
+    }
+
+    &_control {
+      --button-border-color: var(--color-control);
+      --button-shadow-color: var(--color-control-light);
+      --button-background-color: var(--color-control);
+      --button-active-color: var(--color-control-dark);
+    }
+  }
+}

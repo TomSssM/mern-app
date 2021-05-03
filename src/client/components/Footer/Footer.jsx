@@ -6,7 +6,7 @@ import './Footer.scss';
 const Footer = () => (
   <footer className="Footer">
     <LangSwitcher />
-    <span className="Footer-Text">
+    <span className="Footer-Copyright">
       <FormattedMessage
         id="copyright"
         defaultMessage="All rights reserved"

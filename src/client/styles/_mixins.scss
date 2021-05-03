@@ -6,3 +6,10 @@
   color: var(--color-primary);
   text-decoration: none;
 }
+
+%button-reset {
+  border: unset;
+  background-color: var(--color-background);
+  cursor: pointer;
+  outline: none;
+}

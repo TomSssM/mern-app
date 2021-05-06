@@ -4,6 +4,7 @@
 
 %link-reset {
   color: var(--color-primary);
+  font-family: inherit;
   text-decoration: none;
 }
 
@@ -11,5 +12,6 @@
   border: unset;
   background-color: var(--color-background);
   cursor: pointer;
+  font-family: inherit;
   outline: none;
 }

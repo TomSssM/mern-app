@@ -5,17 +5,14 @@ $sizes: xm, m, l, xl;
 .Button {
   @extend %button-reset;
 
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
   border: var(--size-xxs) solid var(--button-border-color);
   border-radius: var(--size-xn);
   color: var(--color-primary);
   transition: var(--transition) all ease-out;
 
   &_type {
-    &_link {
+    &_link,
+    &_router {
       @extend %link-reset;
     }
   }

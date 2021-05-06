@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import classNames from 'classnames';
 import './Button.scss';
 import { select } from '../../../shared/utils';
@@ -10,6 +10,18 @@ export const BUTTON_SIZES = ['xm', 'm', 'l', 'xl'];
 
 const BaseButton = props => <button type="button" {...props} />;
 
+const BaseLink = ({ to, children, ...props }) => (
+  <a href={to} {...props}>
+    {children}
+  </a>
+);
+
+const TYPE_TO_COMPONENT_MAP = {
+  button: BaseButton,
+  link: BaseLink,
+  router: RouterLink,
+};
+
 const Button = ({
   type = 'button',
   size: sizeRaw,
@@ -17,9 +29,15 @@ const Button = ({
   primary = false,
   ...rest
 }) => {
-  const Tag = type === 'link' ? Link : BaseButton;
+  const Tag = TYPE_TO_COMPONENT_MAP[type] ?? BaseButton;
   const size = select(sizeRaw, BUTTON_SIZES, 'l');
   const theme = select(themeRaw, BUTTON_THEMES);
+
+  useEffect(() => {
+    if (!Object.keys(TYPE_TO_COMPONENT_MAP).includes(type)) {
+      console.error(`Unknown type passed to Button component: "${type}"`);
+    }
+  }, [type]);
 
   return (
     <Tag
@@ -27,6 +45,7 @@ const Button = ({
         'Button',
         `Button_size_${size}`,
         `Button_theme_${theme}`,
+        `Button_type_${type}`,
         primary && 'Button_primary',
       )}
       {...rest}

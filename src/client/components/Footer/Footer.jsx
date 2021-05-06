@@ -7,6 +7,7 @@ const Footer = () => (
   <footer className="Footer">
     <LangSwitcher />
     <span className="Footer-Copyright">
+      &copy;{' '}
       <FormattedMessage
         id="copyright"
         defaultMessage="All rights reserved"

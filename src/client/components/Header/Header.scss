@@ -5,16 +5,22 @@
   &-Top {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: var(--size-xl);
   }
 
-  &-ButtonText {
-    margin-right: var(--size-xn);
+  &-PhoneButtonText {
+    font-size: var(--size-m);
+    line-height: var(--size-m);
     text-transform: uppercase;
   }
 
-  &-Phone {
-    font-weight: bold;
+  &-PhoneIcon {
+    margin: 0 var(--size-xn);
+  }
+
+  &-SignInIcon {
+    margin-right: var(--size-xn);
   }
 }

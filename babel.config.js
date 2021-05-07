@@ -7,13 +7,12 @@ module.exports = api => ({
             useBuiltIns: 'usage',
             corejs: 3,
             modules: false,
+            browserslistEnv: 'production',
           }
         : {
             useBuiltIns: 'usage',
             corejs: 3,
-            targets: {
-              node: 'current',
-            },
+            browserslistEnv: 'server',
           },
     ],
     '@babel/preset-react',

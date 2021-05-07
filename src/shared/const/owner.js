@@ -4,4 +4,4 @@ export const PHONE_NUMBER_RAW = {
   digits: 6621619,
 };
 
-export const PHONE_NUMBER = `${PHONE_NUMBER_RAW.code}${PHONE_NUMBER_RAW.prefix}${PHONE_NUMBER_RAW.digits}`;
+export const PHONE_NUMBER = `+${PHONE_NUMBER_RAW.code}${PHONE_NUMBER_RAW.prefix}${PHONE_NUMBER_RAW.digits}`;

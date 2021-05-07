@@ -23,6 +23,8 @@
   --font-size-secondary: 11px;
   --border-secondary: var(--size-xxs) solid var(--color-secondary);
   --main-offset: var(--size-m);
-  --transition: 0.1s;
-  --transition-slower: 0.2s;
+  --transition-duration: 0.1s;
+  --transition-duration-slower: 0.2s;
+  --box-shadow-primary: 0 0 4px var(--color-secondary-light);
+  --box-shadow-hovered: 0 0 20px var(--color-secondary-lighter);
 }

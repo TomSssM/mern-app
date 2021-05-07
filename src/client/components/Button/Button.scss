@@ -8,7 +8,9 @@ $sizes: xm, m, l, xl;
   border: var(--size-xxs) solid var(--button-border-color);
   border-radius: var(--size-xn);
   color: var(--color-primary);
-  transition: var(--transition) all ease-out;
+  transition-duration: var(--transition-duration);
+  transition-property: background-color, color, border;
+  transition-timing-function: ease-out;
 
   &_type {
     &_link,

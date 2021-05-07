@@ -1,2 +1,9 @@
-> 0.10%
-ie >= 11
+[development]
+  last 1 version
+
+[production]
+  > 0.10%
+  ie >= 11
+
+[server]
+  current node

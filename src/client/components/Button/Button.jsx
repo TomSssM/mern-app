@@ -27,6 +27,7 @@ const Button = ({
   size: sizeRaw,
   theme: themeRaw,
   primary = false,
+  className,
   ...rest
 }) => {
   const Tag = TYPE_TO_COMPONENT_MAP[type] ?? BaseButton;
@@ -47,6 +48,7 @@ const Button = ({
         `Button_theme_${theme}`,
         `Button_type_${type}`,
         primary && 'Button_primary',
+        className,
       )}
       {...rest}
     />

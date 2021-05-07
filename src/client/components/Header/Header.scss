@@ -8,12 +8,11 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: var(--size-xl);
-  }
 
-  &-PhoneButtonText {
-    font-size: var(--size-m);
-    line-height: var(--size-m);
-    text-transform: uppercase;
+    @media (max-width: 400px) {
+      flex-flow: column nowrap;
+      align-items: flex-start;
+    }
   }
 
   &-PhoneIcon {
@@ -22,5 +21,17 @@
 
   &-SignInIcon {
     margin-right: var(--size-xn);
+  }
+}
+
+.PhoneButton {
+  @media (max-width: 400px) {
+    margin-bottom: var(--size-xm);
+  }
+
+  &-Text {
+    font-size: var(--size-m);
+    line-height: var(--size-m);
+    text-transform: uppercase;
   }
 }

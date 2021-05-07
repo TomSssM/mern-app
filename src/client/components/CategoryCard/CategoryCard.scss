@@ -11,12 +11,12 @@
   flex-flow: column nowrap;
   margin: var(--size-xm);
   border-radius: 10px;
-  box-shadow: 0 0 4px var(--color-secondary-light);
+  box-shadow: var(--box-shadow-primary);
   cursor: pointer;
-  transition: box-shadow var(--transition-slower) ease-out;
+  transition: box-shadow var(--transition-duration-slower) ease-out;
 
   &:hover {
-    box-shadow: 0 0 20px var(--color-secondary-lighter);
+    box-shadow: var(--box-shadow-hovered);
   }
 
   &-ImageContainer {

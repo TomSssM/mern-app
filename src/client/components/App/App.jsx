@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import IntlProvider from '../IntlProvider';
 import Layout from '../Layout';
 import Footer from '../Footer';
-import { Home, NotFound } from '../../pages';
+import { Home, NotFound, Category } from '../../pages';
 
 const App = () => (
   <Router>
@@ -11,6 +11,7 @@ const App = () => (
       <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/category/:id" component={Category} />
           <Route path="*" component={NotFound} />
         </Switch>
         <Footer />

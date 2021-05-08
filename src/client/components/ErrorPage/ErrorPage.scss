@@ -1,0 +1,32 @@
+.ErrorPage {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  &-Heading {
+    margin: 0;
+    margin-top: var(--size-m);
+  }
+
+  &-ButtonsContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
+
+  &-Button {
+    margin-top: var(--size-m);
+    text-align: center;
+  }
+
+  &-Code {
+    display: block;
+    margin-bottom: 40px;
+    color: var(--color-inactive);
+    font: {
+      size: 90px;
+      weight: bold;
+    }
+  }
+}

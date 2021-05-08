@@ -1,0 +1,12 @@
+@use '../../styles/utils/mixins';
+
+.HomePage {
+  @extend %full-width;
+
+  &-Categories {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: var(--size-xl);
+  }
+}

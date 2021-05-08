@@ -1,15 +1,16 @@
-@use '../../styles/mixins';
+@use '../../styles/utils/mixins';
 
 $sizes: xm, m, l, xl;
 
 .Button {
   @extend %button-reset;
 
+  display: inline-block;
   border: var(--size-xxs) solid var(--button-border-color);
   border-radius: var(--size-xn);
   color: var(--color-primary);
   transition-duration: var(--transition-duration);
-  transition-property: background-color, color, border;
+  transition-property: background-color, box-shadow, color, border;
   transition-timing-function: ease-out;
 
   &_type {
@@ -83,9 +84,9 @@ $sizes: xm, m, l, xl;
 
     &_control {
       --button-border-color: var(--color-control);
-      --button-shadow-color: var(--color-control-light);
+      --button-shadow-color: var(--color-control-dark);
       --button-background-color: var(--color-control);
-      --button-active-color: var(--color-control-dark);
+      --button-active-color: var(--color-control-light);
     }
   }
 }

@@ -5,5 +5,10 @@
   "copyright": "Все права защищены",
   "company-owner": "ИП Кортасов",
   "contact": "Связаться",
-  "sign-in": "Войти"
+  "sign-in": "Войти",
+  "error-title": "Ошибка",
+  "page-not-found": "Страница не найдена",
+  "go-to-main": "На главную",
+  "refresh": "Перезагрузить",
+  "client-error": "Что то пошло не так..."
 }

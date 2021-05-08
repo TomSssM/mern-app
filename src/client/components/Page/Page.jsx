@@ -2,10 +2,10 @@ import React from 'react';
 import Header from '../Header';
 import Main from '../Main';
 
-const Page = ({ children }) => (
+const Page = ({ children, className }) => (
   <>
     <Header />
-    <Main>{children}</Main>
+    <Main className={className}>{children}</Main>
   </>
 );
 

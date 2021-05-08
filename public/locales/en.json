@@ -5,5 +5,10 @@
   "copyright": "All rights reserved",
   "company-owner": "Vitali Kartasau",
   "contact": "Contact",
-  "sign-in": "Sign In"
+  "sign-in": "Sign In",
+  "error-title": "Oops...",
+  "page-not-found": "Page not found",
+  "go-to-main": "Go to main",
+  "refresh": "Reload",
+  "client-error": "Something went wrong..."
 }

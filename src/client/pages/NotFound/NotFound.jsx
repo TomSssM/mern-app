@@ -1,15 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import Main from '../../components/Main';
+import ErrorPage from '../../components/ErrorPage';
 
-// todo: translate
-const NotFound = () => (
-  <Main>
-    <Helmet>
-      <title>Oops!</title>
-    </Helmet>
-    <h1>Not Found!</h1>
-  </Main>
-);
+const NotFound = () => <ErrorPage code={404} />;
 
 export default NotFound;

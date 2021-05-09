@@ -1,8 +1,11 @@
 .ErrorPage {
   display: flex;
+  max-width: 400px;
   flex-flow: column nowrap;
   align-items: center;
+  align-self: center;
   justify-content: center;
+  text-align: center;
 
   &-Heading {
     margin: 0;
@@ -20,13 +23,28 @@
     text-align: center;
   }
 
+  &-ErrorMessage,
+  &-Explanation {
+    text-transform: lowercase;
+  }
+
+  &-ErrorMessage {
+    color: var(--color-secondary);
+  }
+
+  &-Explanation {
+    margin: var(--size-xl) 0;
+  }
+
   &-Code {
-    display: block;
-    margin-bottom: 40px;
     color: var(--color-inactive);
     font: {
       size: 90px;
       weight: bold;
     }
+  }
+
+  &-Code + &-ButtonsContainer {
+    margin-top: 40px;
   }
 }

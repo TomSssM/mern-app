@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import CategoryCard from '../CategoryCard';
 import Page from '../Page';
+import CardsContainer from '../CardsContainer';
 import './HomePage.scss';
 
 const HomePage = ({ categories }) => {
@@ -17,11 +18,11 @@ const HomePage = ({ categories }) => {
           })}
         </title>
       </Helmet>
-      <div className="HomePage-Categories">
-        {categories.map(({ id, name, image }) => (
-          <CategoryCard key={id} id={id} name={name} image={image} />
+      <CardsContainer className="HomePage-Categories">
+        {categories.map(({ id, ...rest }) => (
+          <CategoryCard key={id} id={id} {...rest} />
         ))}
-      </div>
+      </CardsContainer>
     </Page>
   );
 };

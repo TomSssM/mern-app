@@ -1,49 +1,33 @@
-@use '../../styles/utils/mixins';
+@import '../../styles/utils/mixins';
 
 .CategoryCard {
   @extend %link-reset;
 
   display: flex;
   overflow: hidden;
-  width: 100%;
-  max-width: 300px;
   height: 140px;
   flex-flow: column nowrap;
-  margin: var(--size-xm);
   border-radius: 10px;
   box-shadow: var(--box-shadow-primary);
   cursor: pointer;
-  transition: box-shadow var(--transition-duration-slower) ease-out;
+  transition: all var(--transition-duration) ease-out,
+    box-shadow var(--transition-duration-slower) ease-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     box-shadow: var(--box-shadow-hovered);
   }
 
-  &-ImageContainer {
-    position: relative;
+  &-Shade {
     flex: 1;
-
-    > * {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
   }
 
   &-Image {
+    @include absolute();
+
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
-  }
-
-  &-Paranja {
-    background-image: linear-gradient(
-      to bottom,
-      transparent 50%,
-      var(--color-background)
-    );
   }
 
   &-Name {

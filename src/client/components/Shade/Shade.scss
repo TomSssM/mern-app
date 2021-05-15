@@ -1,0 +1,16 @@
+@import '../../styles/utils/mixins';
+
+.Shade {
+  position: relative;
+
+  &-Shadow {
+    @include absolute();
+
+    background-image: linear-gradient(
+      to top,
+      var(--shade-color, var(--color-background)),
+      transparent var(--shade-size, 50%)
+    );
+    pointer-events: none;
+  }
+}

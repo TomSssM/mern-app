@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './CategoryCard.scss';
+import Card from '../Card';
+import Shade from '../Shade';
 
 const CategoryCard = ({ id, name, image, position: [posY, posX] = [] }) => (
-  <Link className="CategoryCard" to={`/category/${id}`}>
-    <span className="CategoryCard-ImageContainer">
-      <span
+  <Card className="CategoryCard" to={`/category/${id}`}>
+    <Shade className="CategoryCard-Shade">
+      <div
         className="CategoryCard-Image"
         style={{
           backgroundImage: `url(${image})`,
@@ -13,10 +14,9 @@ const CategoryCard = ({ id, name, image, position: [posY, posX] = [] }) => (
           backgroundPositionY: posY,
         }}
       />
-      <div className="CategoryCard-Paranja" />
-    </span>
+    </Shade>
     <span className="CategoryCard-Name">{name}</span>
-  </Link>
+  </Card>
 );
 
 export default CategoryCard;

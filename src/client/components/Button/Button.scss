@@ -23,10 +23,16 @@ $sizes: xm, m, l, xl;
   &_primary,
   &:hover {
     background-color: var(--button-background-color);
+  }
+
+  &_primary,
+  &:hover,
+  &:active {
     color: var(--color-background);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     box-shadow: 0 2px 4px var(--button-shadow-color);
   }
 

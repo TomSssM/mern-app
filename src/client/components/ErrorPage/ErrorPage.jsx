@@ -1,31 +1,18 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Main from '../Main';
-import Button from '../Button';
+import HomeButton from '../HomeButton';
+import RefreshButton from '../RefreshButton';
 import './ErrorPage.scss';
 
-const ErrorButton = props => (
-  <Button className="ErrorPage-Button" size="xl" theme="control" {...props} />
+const createErrorButton = Button => props => (
+  <Button className="ErrorPage-Button" {...props} />
 );
 
-const HomeButton = props => (
-  <ErrorButton {...props} type="router" to="/">
-    <FormattedMessage id="go-to-main" defaultMessage="Go to main" />
-  </ErrorButton>
-);
+const ErrorHomeButton = createErrorButton(HomeButton);
 
-const RefreshButton = props => {
-  const onClick = useCallback(() => {
-    window.location.reload();
-  }, []);
-
-  return (
-    <ErrorButton {...props} onClick={onClick}>
-      <FormattedMessage id="refresh" defaultMessage="Reload" />
-    </ErrorButton>
-  );
-};
+const ErrorRefreshButton = createErrorButton(RefreshButton);
 
 const ButtonsContainer = ({ children }) => (
   <div className="ErrorPage-ButtonsContainer">{children}</div>
@@ -33,15 +20,15 @@ const ButtonsContainer = ({ children }) => (
 
 const Page404 = () => (
   <ButtonsContainer>
-    <HomeButton primary />
-    <RefreshButton />
+    <ErrorHomeButton primary />
+    <ErrorRefreshButton />
   </ButtonsContainer>
 );
 
 const Page500 = () => (
   <ButtonsContainer>
-    <RefreshButton primary />
-    <HomeButton />
+    <ErrorRefreshButton primary />
+    <ErrorHomeButton />
   </ButtonsContainer>
 );
 

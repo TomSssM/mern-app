@@ -5,6 +5,7 @@ import Main from '../Main';
 import HomeButton from '../HomeButton';
 import RefreshButton from '../RefreshButton';
 import './ErrorPage.scss';
+import Heading from '../Heading';
 
 const createErrorButton = Button => props => (
   <Button className="ErrorPage-Button" {...props} />
@@ -68,7 +69,7 @@ const ErrorPage = ({ code }) => {
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <h1 className="ErrorPage-Heading">{title}</h1>
+      <Heading className="ErrorPage-Heading">{title}</Heading>
       {code && <span className="ErrorPage-Code">{code}</span>}
       {!code && (
         <span className="ErrorPage-ErrorMessage">

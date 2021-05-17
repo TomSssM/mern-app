@@ -1,0 +1,9 @@
+.CategoryPage {
+  & &-Heading {
+    margin: 0 var(--size-m);
+  }
+
+  &-HomeButton {
+    margin-top: var(--size-m);
+  }
+}

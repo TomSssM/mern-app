@@ -12,5 +12,6 @@
   "refresh": "Reload",
   "client-error": "Something went wrong",
   "error-explanation": "We know about the error and be sure to fix it in no time",
-  "404-explanation": "You came to the page that doesn't appear to exist"
+  "404-explanation": "You came to the page that doesn't appear to exist",
+  "category-empty": "The category \"{name}\" is empty"
 }

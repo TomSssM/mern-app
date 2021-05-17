@@ -4,17 +4,36 @@ import NotFound from '../NotFound';
 import CategoryPage from '../../components/CategoryPage'; // todo: loadable
 import data from '../Home/data'; // todo: database
 
+const getCategoryById = (id, categories = data) => {
+  for (const category of categories) {
+    if (category.id === id) {
+      return category;
+    }
+
+    const innerCategory =
+      category.categories && getCategoryById(id, category.categories);
+
+    if (innerCategory) {
+      return innerCategory;
+    }
+  }
+
+  return null;
+};
+
 const Category = () => {
   const { id } = useParams();
-  const category = data.find(item => item.id === id);
+  const category = getCategoryById(id);
 
   if (!category) {
     return <NotFound />;
   }
 
-  const { name, products } = category;
+  const { name, products = [], categories = [] } = category;
 
-  return <CategoryPage name={name} products={products} />;
+  return (
+    <CategoryPage name={name} products={products} categories={categories} />
+  );
 };
 
 export default Category;

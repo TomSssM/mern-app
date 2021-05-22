@@ -1,0 +1,17 @@
+@use '../../styles/utils/mixins';
+
+.Link {
+  @extend %link-reset;
+
+  cursor: pointer;
+
+  &_theme_default {
+    color: var(--color-control);
+
+    &:hover,
+    &:focus {
+      color: var(--color-control-light);
+      text-decoration: underline;
+    }
+  }
+}

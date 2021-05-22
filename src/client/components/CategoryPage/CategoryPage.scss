@@ -1,9 +1,20 @@
+@use '../../styles/utils/mixins';
+
 .CategoryPage {
-  & &-Heading {
-    margin: 0 var(--size-m);
+  &_empty {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
   }
 
   &-HomeButton {
     margin-top: var(--size-m);
+  }
+
+  &-Categories {
+    @extend %full-width;
+
+    margin-top: var(--size-xl);
   }
 }

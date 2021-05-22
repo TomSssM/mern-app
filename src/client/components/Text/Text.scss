@@ -1,0 +1,26 @@
+@import '../../styles/utils/variables';
+
+.Text {
+  &_theme {
+    &_default {
+      color: var(--color-primary);
+    }
+
+    &_secondary {
+      color: var(--color-secondary);
+    }
+
+    &_light {
+      color: var(--color-secondary-lighter);
+    }
+  }
+
+  &_size {
+    @each $size in $sizes {
+      &_#{$size} {
+        font-size: var(--size-#{$size});
+        line-height: var(--size-#{$size});
+      }
+    }
+  }
+}

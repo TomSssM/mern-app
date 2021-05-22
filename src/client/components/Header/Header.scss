@@ -15,23 +15,22 @@
     }
   }
 
+  & &-PhoneButton {
+    @media (max-width: 400px) {
+      margin-bottom: var(--size-xm);
+    }
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
   &-PhoneIcon {
     margin: 0 var(--size-xn);
   }
 
   &-SignInIcon {
     margin-right: var(--size-xn);
-  }
-}
-
-.PhoneButton {
-  @media (max-width: 400px) {
-    margin-bottom: var(--size-xm);
-  }
-
-  &-Text {
-    font-size: var(--size-m);
-    line-height: var(--size-m);
-    text-transform: uppercase;
   }
 }

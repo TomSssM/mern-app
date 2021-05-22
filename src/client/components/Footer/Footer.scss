@@ -6,10 +6,8 @@
   padding: var(--size-n) 0;
   border-top: var(--border-secondary);
   margin-top: var(--size-n);
-  text-transform: lowercase;
 
   &-Copyright {
-    color: var(--color-secondary);
-    font-size: var(--font-size-secondary);
+    text-transform: lowercase;
   }
 }

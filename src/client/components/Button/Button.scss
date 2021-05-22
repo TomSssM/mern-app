@@ -1,34 +1,33 @@
-@use '../../styles/utils/mixins';
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
 
-$sizes: xm, m, l, xl;
+$component: 'Button';
 
-.Button {
+.#{$component} {
+  --button-text-active-color: var(--color-background);
+
   @extend %button-reset;
 
   display: inline-block;
   border: var(--size-xxs) solid var(--button-border-color);
   border-radius: var(--size-xn);
-  color: var(--color-primary);
   transition-duration: var(--transition-duration);
   transition-property: background-color, box-shadow, color, border;
   transition-timing-function: ease-out;
-
-  &_type {
-    &_link,
-    &_router {
-      @extend %link-reset;
-    }
-  }
 
   &_primary,
   &:hover {
     background-color: var(--button-background-color);
   }
 
-  &_primary,
-  &:hover,
-  &:active {
-    color: var(--color-background);
+  &.#{$component} {
+    color: var(--color-primary);
+
+    &_primary,
+    &:hover,
+    &:active {
+      color: var(--button-text-active-color);
+    }
   }
 
   &:hover,
@@ -43,27 +42,50 @@ $sizes: xm, m, l, xl;
   }
 
   &_size {
+    &_xm {
+      padding: var(--size-xxs) var(--size-xm) var(--size-xs);
+    }
+
+    &_m {
+      padding: var(--size-xs) var(--size-m) var(--size-s);
+    }
+
+    &_l {
+      padding: var(--size-s) var(--size-l) var(--size-xn);
+    }
+
+    &_xl {
+      padding: var(--size-xn) var(--size-xl) var(--size-n);
+    }
     @each $size in $sizes {
       &_#{$size} {
         font-size: var(--size-#{$size});
         line-height: var(--size-#{$size});
       }
     }
+  }
 
-    &_xm {
-      padding: var(--size-xs) var(--size-xm);
-    }
+  &_uppercase {
+    text-transform: uppercase;
 
-    &_m {
-      padding: var(--size-s) var(--size-m);
-    }
+    &.#{$component} {
+      &_size {
+        &_xm {
+          padding-top: var(--size-xs);
+        }
 
-    &_l {
-      padding: var(--size-xn) var(--size-l);
-    }
+        &_m {
+          padding-top: var(--size-s);
+        }
 
-    &_xl {
-      padding: var(--size-n) var(--size-xl);
+        &_l {
+          padding-top: var(--size-xn);
+        }
+
+        &_xl {
+          padding-top: var(--size-n);
+        }
+      }
     }
   }
 
@@ -73,11 +95,10 @@ $sizes: xm, m, l, xl;
       --button-shadow-color: var(--color-secondary-light);
       --button-background-color: var(--color-background);
       --button-active-color: var(--color-secondary-light);
+      --button-text-active-color: var(--color-primary);
 
       &:hover {
         --button-border-color: transparent;
-
-        color: var(--color-primary);
       }
     }
 

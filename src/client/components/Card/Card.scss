@@ -1,8 +1,4 @@
-@use '../../styles/utils/mixins';
-
 .Card {
-  @extend %link-reset;
-
   width: 100%;
   max-width: 300px;
   margin: var(--size-xm);

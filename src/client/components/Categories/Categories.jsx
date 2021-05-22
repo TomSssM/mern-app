@@ -5,6 +5,7 @@ import Card from '../Card';
 import Shade from '../Shade';
 import CardsContainer from '../CardsContainer';
 
+// todo: Image component with shade that would consider the props from the "database"
 export const CategoryCard = ({
   id,
   name,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
 import './CategoryPage.scss';
 import Page from '../Page';
 import Heading from '../Heading';
@@ -14,12 +15,19 @@ const CategoryPage = ({ name, products, categories }) => {
   const isEmpty = categoriesEmpty && productsEmpty;
 
   return (
-    <Page className="CategoryPage">
+    <Page
+      className={classNames('CategoryPage', isEmpty && 'CategoryPage_empty')}
+    >
       <Helmet>
         <title>{name}</title>
       </Helmet>
+      {!categoriesEmpty && (
+        <Categories
+          className="CategoryPage-Categories"
+          categories={categories}
+        />
+      )}
       {!productsEmpty && <Products products={products} />}
-      {!categoriesEmpty && <Categories categories={categories} />}
       {isEmpty && (
         <>
           <Heading className="CategoryPage-Heading">
@@ -31,7 +39,7 @@ const CategoryPage = ({ name, products, categories }) => {
               }}
             />
           </Heading>
-          <HomeButton className="HomeButton" />
+          <HomeButton className="CategoryPage-HomeButton" />
         </>
       )}
     </Page>

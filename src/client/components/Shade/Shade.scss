@@ -2,10 +2,13 @@
 
 .Shade {
   position: relative;
+  height: 100%;
+
+  > * {
+    @include absolute();
+  }
 
   &-Shadow {
-    @include absolute();
-
     background-image: linear-gradient(
       to top,
       var(--shade-color, var(--color-background)),

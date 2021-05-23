@@ -1,0 +1,16 @@
+.ProductImage {
+  &-Image {
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    &_size {
+      &_fit {
+        background-size: contain;
+      }
+
+      &_full {
+        background-size: cover;
+      }
+    }
+  }
+}

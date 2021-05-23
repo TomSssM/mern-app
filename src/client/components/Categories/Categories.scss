@@ -3,10 +3,6 @@
 .CategoryCard {
   @extend %link-reset;
 
-  display: flex;
-  overflow: hidden;
-  height: 140px;
-  flex-flow: column nowrap;
   border-radius: 10px;
   box-shadow: var(--box-shadow-primary);
   cursor: pointer;
@@ -16,18 +12,6 @@
   &:hover,
   &:focus {
     box-shadow: var(--box-shadow-hovered);
-  }
-
-  &-Shade {
-    flex: 1;
-  }
-
-  &-Image {
-    @include absolute();
-
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: contain;
   }
 
   &-Name {

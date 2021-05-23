@@ -2,31 +2,16 @@ import React from 'react';
 import classNames from 'classnames';
 import './Categories.scss';
 import Card from '../Card';
-import Shade from '../Shade';
 import CardsContainer from '../CardsContainer';
 
-// todo: Image component with shade that would consider the props from the "database"
-export const CategoryCard = ({
-  id,
-  name,
-  image,
-  position: [posY, posX] = [],
-  className,
-}) => (
+export const CategoryCard = ({ id, name, className, ...props }) => (
   <Card
     className={classNames('CategoryCard', className)}
+    {...props}
     to={`/category/${id}`}
+    height={140}
+    width={300}
   >
-    <Shade className="CategoryCard-Shade">
-      <div
-        className="CategoryCard-Image"
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundPositionX: posX,
-          backgroundPositionY: posY,
-        }}
-      />
-    </Shade>
     <span className="CategoryCard-Name">{name}</span>
   </Card>
 );

@@ -1,5 +1,7 @@
 .Card {
+  display: flex;
+  overflow: hidden;
   width: 100%;
-  max-width: 300px;
+  flex-flow: column nowrap;
   margin: var(--size-xm);
 }

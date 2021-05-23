@@ -285,7 +285,10 @@ const data = [
     id: '112',
     name: 'Кабеля',
     imageProps: {
-      position: ['top', 'left'],
+      position: {
+        y: 'top',
+        x: 'left',
+      },
     },
     image: cable,
     products: [],

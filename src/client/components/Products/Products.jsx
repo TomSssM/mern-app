@@ -7,18 +7,20 @@ import { PHONE_NUMBER } from '../../../shared/const/owner';
 
 export const ProductCard = ({
   name: productName,
-  image,
   params = [],
   className,
+  ...props
 }) => (
   <Card
-    type="link"
     className={classNames('ProductCard', className)}
+    {...props}
+    type="link"
     to={`tel:${PHONE_NUMBER}`}
+    height={400}
+    width={300}
   >
     {productName}
     <br />
-    <img src={image} alt={productName} width="200px" />
     {params.map(({ name: paramName, value }) => (
       <div key={paramName}>
         <span>

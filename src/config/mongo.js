@@ -1,1 +1,1 @@
-export const { MONGO_URI, MONGO_DB_NAME } = process.env;
+export const { MONGO_URI: mongoUri } = process.env;

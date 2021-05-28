@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import './Text.scss';
 import { select } from '../../../shared/utils';
-import { SIZES, DEFAULT_SIZE } from '../../../shared/const/sizes';
+import { SIZES, DEFAULT_SIZE } from '../../../shared/constants/sizes';
 
 export const TEXT_THEMES = ['primary', 'secondary', 'light'];
 

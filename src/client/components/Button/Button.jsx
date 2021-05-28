@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import './Button.scss';
 import Link from '../Link';
 import { select } from '../../../shared/utils';
-import { SIZES, DEFAULT_SIZE } from '../../../shared/const/sizes';
+import { SIZES, DEFAULT_SIZE } from '../../../shared/constants/sizes';
 
 export const BUTTON_THEMES = ['clear', 'action', 'control'];
 

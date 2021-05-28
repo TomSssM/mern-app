@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import './Products.scss';
 import CardsContainer from '../CardsContainer';
 import Card from '../Card';
-import { PHONE_NUMBER } from '../../../shared/const/owner';
+import { PHONE_NUMBER } from '../../../shared/constants/owner';
 
 export const ProductCard = ({
   name: productName,

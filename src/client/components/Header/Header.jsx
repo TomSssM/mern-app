@@ -7,7 +7,10 @@ import Logo from '../Logo';
 import Button from '../Button';
 import Link from '../Link';
 import Text from '../Text';
-import { PHONE_NUMBER_RAW, PHONE_NUMBER } from '../../../shared/const/owner';
+import {
+  PHONE_NUMBER_RAW,
+  PHONE_NUMBER,
+} from '../../../shared/constants/owner';
 import { formatPhone } from '../../../shared/utils';
 
 const Header = () => (

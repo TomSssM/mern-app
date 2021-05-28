@@ -26,13 +26,7 @@ const Header = () => (
         <FontAwesomeIcon className="Header-PhoneIcon" icon={faPhoneAlt} />
         <span className="Header-Phone">{formatPhone(PHONE_NUMBER_RAW)}</span>
       </Button>
-      <Button
-        style={{
-          display: 'none', // todo: show when we have authorization
-        }}
-        type="router"
-        to="/login"
-      >
+      <Button type="router" to="/login">
         <FontAwesomeIcon className="Header-SignInIcon" icon={faSignInAlt} />
         <FormattedMessage id="sign-in" defaultMessage="Sign In" />
       </Button>

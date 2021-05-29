@@ -2,7 +2,7 @@ import { select } from '../../../shared/utils';
 import {
   AVAILABLE_LOCALES,
   DEFAULT_LOCALE,
-} from '../../../shared/const/locales';
+} from '../../../shared/constants/locales';
 
 export const LOCALE_LS_KEY = 'locale';
 

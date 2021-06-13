@@ -1,3 +1,5 @@
+@import '../../styles/utils/variables';
+
 .Header {
   padding: var(--size-xl) 0 30px;
   border-bottom: var(--border-secondary);
@@ -9,13 +11,13 @@
     justify-content: space-between;
     margin-bottom: var(--size-xl);
 
-    @media (max-width: 400px) {
+    @media (max-width: $screen-size-phone) {
       flex-flow: column nowrap;
     }
   }
 
   & &-PhoneButton {
-    @media (max-width: 400px) {
+    @media (max-width: $screen-size-phone) {
       margin-bottom: var(--size-xm);
     }
 

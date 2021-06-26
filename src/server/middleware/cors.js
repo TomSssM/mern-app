@@ -1,8 +1,12 @@
 import cors from 'cors';
 import config from '../../config';
 
-const middleware = cors({
-  ...config.cors,
-});
+const { DEV_PORT } = config;
 
-export { middleware as cors };
+export default cors({
+  origin:
+    process.env.NODE_ENV === 'development'
+      ? [`http://localhost:${DEV_PORT}`]
+      : [],
+  credentials: true,
+});

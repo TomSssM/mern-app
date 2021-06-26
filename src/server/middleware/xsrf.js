@@ -1,6 +1,6 @@
-import { BadRequestError } from '../../shared/errors';
+import BadRequestError from '../../shared/errors/BadRequestError';
 
-export const xsrf = (req, res, next) => {
+const xsrf = (req, res, next) => {
   if (
     req.method === 'POST' &&
     req.headers['content-type'] !== 'application/json'
@@ -9,3 +9,5 @@ export const xsrf = (req, res, next) => {
   }
   next();
 };
+
+export default xsrf;

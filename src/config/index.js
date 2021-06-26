@@ -1,15 +1,14 @@
-import { port, devPort, defaultPort } from './app';
-import { staticPath, buildPath, rootPath } from './path';
-import { mongoUri } from './mongo';
-import cors from './cors';
+import { PORT, DEV_PORT, DEFAULT_PORT } from './app';
+import { ROOT_PATH, BUILD_PATH, STATIC_PATH } from './path';
+import { MONGO_URI, MONGO_DB_NAME } from './mongo';
 
 export default {
-  port,
-  devPort,
-  defaultPort,
-  rootPath,
-  buildPath,
-  staticPath,
-  mongoUri,
-  cors,
+  PORT,
+  DEV_PORT,
+  DEFAULT_PORT,
+  ROOT_PATH,
+  BUILD_PATH,
+  STATIC_PATH,
+  MONGO_URI,
+  MONGO_DB_NAME,
 };

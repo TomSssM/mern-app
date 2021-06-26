@@ -1,6 +1,6 @@
-import { HttpError } from './HttpError';
+import HttpError from './HttpError';
 
-export class UnauthorizedError extends HttpError {
+class UnauthorizedError extends HttpError {
   constructor(message = 'Unauthorized') {
     super({
       message,
@@ -8,3 +8,5 @@ export class UnauthorizedError extends HttpError {
     });
   }
 }
+
+export default UnauthorizedError;

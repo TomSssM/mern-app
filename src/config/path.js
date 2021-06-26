@@ -1,7 +1,7 @@
 import path from 'path';
 
-export const rootPath = path.resolve(__dirname, '..', '..');
+export const ROOT_PATH = path.resolve(__dirname, '..', '..');
 
-export const buildPath = path.join(rootPath, 'build');
+export const BUILD_PATH = path.join(ROOT_PATH, 'build');
 
-export const staticPath = path.join(buildPath, 'static');
+export const STATIC_PATH = path.join(BUILD_PATH, 'static');

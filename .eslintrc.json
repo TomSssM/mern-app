@@ -20,8 +20,6 @@
   },
   "plugins": ["react"],
   "rules": {
-    "import/prefer-default-export": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
     "curly": ["error", "all"],
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-unused-vars": [
@@ -33,16 +31,17 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "react/prop-types": "off",
-    "react/jsx-props-no-spreading": "off",
     "no-restricted-syntax": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
         "devDependencies": ["webpack.*.js", "postcss.config.js"]
       }
-    ]
+    ],
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "overrides": [
     {

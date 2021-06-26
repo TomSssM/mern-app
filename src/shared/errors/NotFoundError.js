@@ -1,6 +1,6 @@
-import { HttpError } from './HttpError';
+import HttpError from './HttpError';
 
-export class NotFoundError extends HttpError {
+class NotFoundError extends HttpError {
   constructor(message = 'Not Found') {
     super({
       message,
@@ -8,3 +8,5 @@ export class NotFoundError extends HttpError {
     });
   }
 }
+
+export default NotFoundError;

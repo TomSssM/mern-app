@@ -6,6 +6,8 @@ import { select } from '../../../shared/utils';
 
 export const IMAGE_SIZES = ['fit', 'full'];
 
+// todo: use PropTypes and storybook
+
 const ProductImage = ({
   src,
   position: { x: posX, y: posY } = {},

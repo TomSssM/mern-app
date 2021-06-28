@@ -12,6 +12,8 @@ const BaseLink = ({ to, children, ...rest }) => (
   </a>
 );
 
+// todo: use PropTypes and storybook
+
 const Link = ({
   className,
   target,

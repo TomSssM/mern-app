@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import './Shade.scss';
 
+// todo: use PropTypes and storybook
+
 const Shade = ({ className, children, color, size, ...rest }) => {
   const ref = useRef();
 

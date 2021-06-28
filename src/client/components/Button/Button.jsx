@@ -12,8 +12,6 @@ const TYPE_TO_COMPONENT_MAP = {
   router: BaseLink,
 };
 
-// todo: use PropTypes everywhere instead of select
-
 const Button = ({
   type,
   size,
@@ -49,8 +47,6 @@ const Button = ({
   );
 };
 
-export default Button;
-
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'link', 'router']),
   size: PropTypes.oneOf(['xm', 'm', 'l', 'xl']),
@@ -66,3 +62,5 @@ Button.defaultProps = {
   primary: false,
   uppercase: false,
 };
+
+export default Button;

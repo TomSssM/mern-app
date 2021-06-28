@@ -4,6 +4,8 @@ import './Card.scss';
 import Link from '../Link';
 import ProductImage from '../ProductImage';
 
+// todo: use PropTypes and storybook
+
 const Card = ({
   className,
   children,

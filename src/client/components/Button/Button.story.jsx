@@ -6,6 +6,12 @@ export default {
   title: 'Button',
   component: Button,
   decorators: [StoryRouter()],
+  args: {
+    theme: 'clear',
+    type: 'button',
+    size: 'l',
+    onClick: () => {},
+  },
 };
 
 const Template = ({ text, ...args }) => <Button {...args}>{text}</Button>;
@@ -13,15 +19,10 @@ const Template = ({ text, ...args }) => <Button {...args}>{text}</Button>;
 export const Default = Template.bind({});
 Default.args = {
   text: 'Default',
-  theme: 'clear',
-  type: 'button',
-  size: 'l',
-  onClick: () => {},
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  ...Default.args,
   primary: true,
   text: 'Primary',
   theme: 'action',
@@ -29,7 +30,6 @@ Primary.args = {
 
 export const Navigation = Template.bind({});
 Navigation.args = {
-  ...Default.args,
   type: 'router',
   text: 'Navigation',
   to: '/test',

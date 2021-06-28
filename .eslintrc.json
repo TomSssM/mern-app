@@ -37,7 +37,11 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["webpack.*.js", "postcss.config.js"]
+        "devDependencies": [
+          "webpack.*.js",
+          "postcss.config.js",
+          "**/*.story.jsx"
+        ]
       }
     ],
     "react/prop-types": "off",

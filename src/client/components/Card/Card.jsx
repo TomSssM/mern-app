@@ -13,6 +13,7 @@ const Card = ({
   width,
   ...props
 }) => (
+  // todo: rewrite to useHistory
   <Link
     className={classNames('Card', className)}
     {...props}

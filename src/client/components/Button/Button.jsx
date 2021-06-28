@@ -1,13 +1,8 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import './Button.scss';
 import Link from '../Link';
-import { select } from '../../../shared/utils';
-import { SIZES, DEFAULT_SIZE } from '../../../shared/constants/sizes';
-
-export const BUTTON_THEMES = ['clear', 'action', 'control'];
-
-export const BUTTON_TYPES = ['button', 'link', 'router'];
 
 const BaseLink = props => <Link {...props} theme="none" />;
 
@@ -17,18 +12,17 @@ const TYPE_TO_COMPONENT_MAP = {
   router: BaseLink,
 };
 
+// todo: use PropTypes everywhere instead of select
+
 const Button = ({
-  type: typeRaw = 'button',
-  size: sizeRaw,
-  theme: themeRaw,
-  primary = false,
-  uppercase = false,
+  type,
+  size,
+  theme,
+  primary,
+  uppercase,
   className,
   ...rest
 }) => {
-  const size = select(sizeRaw, SIZES, DEFAULT_SIZE);
-  const theme = select(themeRaw, BUTTON_THEMES);
-  const type = select(typeRaw, BUTTON_TYPES);
   const Tag = TYPE_TO_COMPONENT_MAP[type];
 
   useEffect(() => {
@@ -56,3 +50,19 @@ const Button = ({
 };
 
 export default Button;
+
+Button.propTypes = {
+  type: PropTypes.oneOf(['button', 'link', 'router']),
+  size: PropTypes.oneOf(['xm', 'm', 'l', 'xl']),
+  theme: PropTypes.oneOf(['clear', 'action', 'control']),
+  primary: PropTypes.bool,
+  uppercase: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  type: 'button',
+  size: 'l',
+  theme: 'clear',
+  primary: false,
+  uppercase: false,
+};

@@ -1,6 +1,7 @@
 export const select = (dynamicValue, values, defaultValue = values[0]) =>
   values.find(item => item === dynamicValue) ?? defaultValue;
 
+// todo: create a util like phoneLink and put all this stuff in: export * from './phone';
 export const formatPhone = ({ code, prefix, digits: rawDigits }) => {
   const STEP = 2;
   const digits = [];

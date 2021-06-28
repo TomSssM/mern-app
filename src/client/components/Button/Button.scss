@@ -43,20 +43,21 @@ $component: 'Button';
 
   &_size {
     &_xm {
-      padding: var(--size-xxs) var(--size-xm) var(--size-xs);
+      padding: var(--size-xs) var(--size-xm);
     }
 
     &_m {
-      padding: var(--size-xs) var(--size-m) var(--size-s);
+      padding: var(--size-s) var(--size-m);
     }
 
     &_l {
-      padding: var(--size-s) var(--size-l) var(--size-xn);
+      padding: var(--size-xn) var(--size-l);
     }
 
     &_xl {
-      padding: var(--size-xn) var(--size-xl) var(--size-n);
+      padding: var(--size-n) var(--size-xl);
     }
+
     @each $size in $sizes {
       &_#{$size} {
         font-size: var(--size-#{$size});
@@ -67,26 +68,6 @@ $component: 'Button';
 
   &_uppercase {
     text-transform: uppercase;
-
-    &.#{$component} {
-      &_size {
-        &_xm {
-          padding-top: var(--size-xs);
-        }
-
-        &_m {
-          padding-top: var(--size-s);
-        }
-
-        &_l {
-          padding-top: var(--size-xn);
-        }
-
-        &_xl {
-          padding-top: var(--size-n);
-        }
-      }
-    }
   }
 
   &_theme {

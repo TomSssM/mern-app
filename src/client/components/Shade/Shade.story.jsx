@@ -24,7 +24,7 @@ const Card = ({ children }) => (
       justifyContent: 'center',
       width: '70px',
       height: '30px',
-      background: '#ccc',
+      background: '#000',
     }}
   >
     {children}

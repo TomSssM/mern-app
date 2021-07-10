@@ -25,7 +25,7 @@ const Card = ({
     }}
     theme="none"
   >
-    <ProductImage src={image} {...imageProps} />
+    <ProductImage className="Card-Image" src={image} {...imageProps} />
     {children}
   </Link>
 );

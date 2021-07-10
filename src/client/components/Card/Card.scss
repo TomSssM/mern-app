@@ -4,4 +4,8 @@
   width: 100%;
   flex-flow: column nowrap;
   margin: var(--size-xm);
+
+  &-Image {
+    flex: 1;
+  }
 }

@@ -38,6 +38,17 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  useBuiltIns: 'usage',
+                  corejs: 3,
+                  modules: false,
+                  browserslistEnv: 'production',
+                },
+              ],
+            ],
           },
         },
       },

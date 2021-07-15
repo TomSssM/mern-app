@@ -2,8 +2,8 @@ import React, { createContext, useState, useMemo, useEffect } from 'react';
 import { IntlProvider as IntlProviderBase } from 'react-intl';
 import { LOCALE_LS_KEY, getInitialLocale } from './utils';
 import { DEFAULT_LOCALE } from '../../../shared/constants/locales';
-import messagesInRussian from '../../../../public/locales/ru.json';
-import messagesInEnglish from '../../../../public/locales/en.json';
+import messagesInRussian from '../../../public/locales/ru.json';
+import messagesInEnglish from '../../../public/locales/en.json';
 
 export const LangContext = createContext();
 

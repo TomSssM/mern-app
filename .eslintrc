@@ -49,7 +49,7 @@
   },
   "overrides": [
     {
-      "files": "./src/server/**/*.js",
+      "files": "./server/**/*.js",
       "env": {
         "node": true,
         "browser": false
@@ -59,10 +59,16 @@
       }
     },
     {
-      "files": ["./src/client/**/*.js", "*.jsx"],
+      "files": ["./client/**/*.js", "*.jsx"],
       "env": {
         "node": false,
         "browser": true
+      }
+    },
+    {
+      "files": ["./.storybook/**/*.js"],
+      "rules": {
+        "import/prefer-default-export": "off"
       }
     }
   ]

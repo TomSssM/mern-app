@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../src/**/*.story.@(js|jsx)'],
+  stories: ['../client/**/*.story.@(js|jsx)'],
   addons: ['@storybook/addon-essentials'],
   webpackFinal: config => {
     config.module.rules.push({

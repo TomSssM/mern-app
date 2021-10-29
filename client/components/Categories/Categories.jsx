@@ -4,10 +4,10 @@ import './Categories.scss';
 import Card from '../Card';
 import CardsContainer from '../CardsContainer';
 
-export const CategoryCard = ({ id, name, className, ...props }) => (
+export const CategoryCard = ({ id, name, className, ...rest }) => (
   <Card
     className={classNames('CategoryCard', className)}
-    {...props}
+    {...rest}
     to={`/category/${id}`}
     height={140}
     width={300}
@@ -16,10 +16,10 @@ export const CategoryCard = ({ id, name, className, ...props }) => (
   </Card>
 );
 
-const Categories = ({ categories, ...props }) => (
-  <CardsContainer {...props}>
-    {categories?.map(({ id, ...rest }) => (
-      <CategoryCard key={id} id={id} {...rest} />
+const Categories = ({ categories, ...rest }) => (
+  <CardsContainer {...rest}>
+    {categories?.map(props => (
+      <CategoryCard key={props.id} {...props} />
     ))}
   </CardsContainer>
 );

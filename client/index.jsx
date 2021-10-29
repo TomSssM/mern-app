@@ -1,6 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import App from './components/App';
-import './styles/index.scss';
+import './index.scss';
 
-render(<App />, document.getElementById('root'));
+// todo: bring: IntlProvider, BrowserRouter:Router and ErrorBoundary to this file
+ReactDOM.render(<App />, document.getElementById('root'));

@@ -9,11 +9,11 @@ export const ProductCard = ({
   name: productName,
   params = [],
   className,
-  ...props
+  ...rest
 }) => (
   <Card
     className={classNames('ProductCard', className)}
-    {...props}
+    {...rest}
     type="link"
     to={`tel:${PHONE_NUMBER}`}
     height={400}
@@ -31,10 +31,10 @@ export const ProductCard = ({
   </Card>
 );
 
-const Products = ({ products, ...props }) => (
-  <CardsContainer {...props}>
-    {products?.map(({ id, ...rest }) => (
-      <ProductCard key={id} id={id} {...rest} />
+const Products = ({ products, ...rest }) => (
+  <CardsContainer {...rest}>
+    {products?.map(props => (
+      <ProductCard key={props.id} {...props} />
     ))}
   </CardsContainer>
 );

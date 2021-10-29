@@ -13,12 +13,12 @@ const Card = ({
   imageProps,
   height,
   width,
-  ...props
+  ...rest
 }) => (
   // todo: rewrite to useHistory
   <Link
     className={classNames('Card', className)}
-    {...props}
+    {...rest}
     style={{
       height: `${height}px`,
       maxWidth: `${width}px`,

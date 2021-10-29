@@ -7,6 +7,7 @@ import RefreshButton from '../RefreshButton';
 import './ErrorPage.scss';
 import Heading from '../Heading';
 
+// todo ilyakortasov: rewrite to _just_ components
 const createErrorButton = Button => props => (
   <Button className="ErrorPage-Button" {...props} />
 );

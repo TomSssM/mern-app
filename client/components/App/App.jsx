@@ -4,7 +4,9 @@ import ErrorBoundary from '../ErrorBoundary';
 import IntlProvider from '../IntlProvider';
 import Layout from '../Layout';
 import Footer from '../Footer';
-import { Home, NotFound, Category } from '../../pages';
+import Home from '../../pages/Home';
+import NotFound from '../../pages/NotFound';
+import Category from '../../pages/Category';
 
 const App = () => (
   <IntlProvider>

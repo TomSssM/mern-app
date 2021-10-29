@@ -1,5 +1,5 @@
-@import '../../styles/utils/variables';
-@import '../../styles/utils/mixins';
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 $component: 'Button';
 
@@ -20,6 +20,7 @@ $component: 'Button';
     background-color: var(--button-background-color);
   }
 
+  // todo: happens because of "sideEffects" (maybe this is not a problem)
   &.#{$component} {
     color: var(--color-primary);
 

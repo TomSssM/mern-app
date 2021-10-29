@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './Button.scss';
@@ -22,12 +22,6 @@ const Button = ({
   ...rest
 }) => {
   const Tag = TYPE_TO_COMPONENT_MAP[type];
-
-  useEffect(() => {
-    if (!Object.keys(TYPE_TO_COMPONENT_MAP).includes(type)) {
-      console.error(`Unknown type passed to Button component: "${type}"`);
-    }
-  }, [type]);
 
   return (
     <Tag

@@ -4,8 +4,8 @@ import './CardsContainer.scss';
 
 // todo: move to cmponents/Card
 
-const CardsContainer = ({ className, ...props }) => (
-  <div className={classNames('CardsContainer', className)} {...props} />
+const CardsContainer = ({ className, ...rest }) => (
+  <div className={classNames('CardsContainer', className)} {...rest} />
 );
 
 export default CardsContainer;

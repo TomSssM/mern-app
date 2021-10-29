@@ -1,4 +1,4 @@
-@import '../../styles/utils/variables';
+@import '../../styles/variables';
 
 .Header {
   padding: var(--size-xl) 0 30px;
@@ -16,15 +16,16 @@
     }
   }
 
+  // todo: happens because of "sideEffects" field
   & &-PhoneButton {
-    @media (max-width: $screen-size-phone) {
-      margin-bottom: var(--size-xm);
-    }
-
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: $screen-size-phone) {
+      margin-bottom: var(--size-xm);
+    }
   }
 
   &-PhoneIcon {

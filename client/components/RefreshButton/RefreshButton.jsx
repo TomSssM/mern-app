@@ -4,14 +4,14 @@ import classNames from 'classnames';
 import Button from '../Button';
 import './RefreshButton.scss';
 
-const RefreshButton = ({ className, ...props }) => {
+const RefreshButton = ({ className, ...rest }) => {
   const onClick = useCallback(() => {
     window.location.reload();
   }, []);
 
   return (
     <Button
-      {...props}
+      {...rest}
       className={classNames('RefreshButton', className)}
       onClick={onClick}
       size="xl"

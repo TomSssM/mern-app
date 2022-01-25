@@ -15,7 +15,7 @@
     "build:client": "webpack --config webpack.prod.js",
     "prestart": "npm run build",
     "prebuild": "npm run lint",
-    "server": "nodemon server/index.js --quiet --exec babel-node --require dotenv/config",
+    "server": "nodemon server/index.js --exec babel-node --require dotenv/config",
     "client": "webpack serve --open --config webpack.dev.js",
     "format": "prettier '.' '.*rc'",
     "lint": "npm-run-all lint:*",

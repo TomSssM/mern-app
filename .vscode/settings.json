@@ -6,5 +6,7 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
-  "stylelint.validate": ["html", "scss"]
+  "stylelint.validate": ["html", "scss"],
+  "jest.autoRun": { "watch": false },
+  "jest.enableCodeLens": false
 }

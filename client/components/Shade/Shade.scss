@@ -4,7 +4,7 @@
   position: relative;
 
   &-Shadow {
-    @include absolute();
+    @include absolute;
 
     background-image: linear-gradient(
       var(--shade-direction, to top),

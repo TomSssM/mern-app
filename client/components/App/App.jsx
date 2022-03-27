@@ -8,6 +8,7 @@ import Home from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 import Category from '../../pages/Category';
 
+// todo: bring: React.StrictMode to this file
 const App = () => (
   <IntlProvider>
     <Router>

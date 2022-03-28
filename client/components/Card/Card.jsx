@@ -6,7 +6,7 @@ import ProductImage from '../ProductImage';
 
 // todo: use PropTypes and storybook
 
-const Card = ({
+function Card({
   className,
   children,
   image,
@@ -14,20 +14,23 @@ const Card = ({
   height,
   width,
   ...rest
-}) => (
+}) {
   // todo: rewrite to useHistory
-  <Link
-    className={classNames('Card', className)}
-    {...rest}
-    style={{
-      height: `${height}px`,
-      maxWidth: `${width}px`,
-    }}
-    theme="none"
-  >
-    <ProductImage className="Card-Image" src={image} {...imageProps} />
-    {children}
-  </Link>
-);
+
+  return (
+    <Link
+      className={classNames('Card', className)}
+      {...rest}
+      style={{
+        height: `${height}px`,
+        maxWidth: `${width}px`,
+      }}
+      theme="none"
+    >
+      <ProductImage className="Card-Image" src={image} {...imageProps} />
+      {children}
+    </Link>
+  );
+}
 
 export default Card;

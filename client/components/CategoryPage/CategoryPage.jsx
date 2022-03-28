@@ -2,14 +2,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import './CategoryPage.scss';
 import Page from '../Page';
 import Heading from '../Heading';
 import HomeButton from '../HomeButton';
 import Categories from '../Categories';
 import Products from '../Products';
+import './CategoryPage.scss';
 
-const CategoryPage = ({ name, products, categories }) => {
+function CategoryPage({ name, products, categories }) {
   const categoriesEmpty = !categories?.length;
   const productsEmpty = !products?.length;
   const isEmpty = categoriesEmpty && productsEmpty;
@@ -44,6 +44,6 @@ const CategoryPage = ({ name, products, categories }) => {
       )}
     </Page>
   );
-};
+}
 
 export default CategoryPage;

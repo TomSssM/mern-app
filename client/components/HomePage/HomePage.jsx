@@ -5,7 +5,7 @@ import Page from '../Page';
 import Categories from '../Categories';
 import './HomePage.scss';
 
-const HomePage = ({ categories }) => {
+function HomePage({ categories }) {
   const intl = useIntl();
   return (
     <Page className="HomePage">
@@ -20,6 +20,6 @@ const HomePage = ({ categories }) => {
       <Categories className="HomePage-Categories" categories={categories} />
     </Page>
   );
-};
+}
 
 export default HomePage;

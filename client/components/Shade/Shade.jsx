@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Shade.scss';
 
-const Shade = ({
+function Shade({
   className,
   children,
   color,
@@ -12,7 +12,7 @@ const Shade = ({
   direction,
   opacity,
   ...rest
-}) => {
+}) {
   const ref = useRef();
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Shade = ({
       <div className="Shade-Shadow" />
     </div>
   );
-};
+}
 
 Shade.propTypes = {
   color: PropTypes.string,

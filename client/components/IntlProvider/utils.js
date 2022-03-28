@@ -6,16 +6,16 @@ import {
 
 export const LOCALE_LS_KEY = 'locale';
 
-const parseNavigatorLanguage = () => {
+function parseNavigatorLanguage() {
   const [language] = navigator.language.split('-');
   return select(language, AVAILABLE_LOCALES, DEFAULT_LOCALE);
-};
+}
 
-export const getInitialLocale = () => {
+export function getInitialLocale() {
   const navigatorLanguage = parseNavigatorLanguage();
   const savedLanguage = localStorage.getItem(LOCALE_LS_KEY);
 
   return savedLanguage
     ? select(savedLanguage, AVAILABLE_LOCALES, navigatorLanguage)
     : navigatorLanguage;
-};
+}

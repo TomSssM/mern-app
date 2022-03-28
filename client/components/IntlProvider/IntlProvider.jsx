@@ -9,7 +9,7 @@ export const LangContext = createContext();
 
 const initialLocale = getInitialLocale();
 
-const IntlProvider = ({ children }) => {
+function IntlProvider({ children }) {
   const [locale, setLocale] = useState(initialLocale);
 
   const messages = useMemo(() => {
@@ -44,6 +44,6 @@ const IntlProvider = ({ children }) => {
       <LangContext.Provider value={value}>{children}</LangContext.Provider>
     </IntlProviderBase>
   );
-};
+}
 
 export default IntlProvider;

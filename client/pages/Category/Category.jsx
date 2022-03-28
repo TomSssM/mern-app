@@ -4,7 +4,7 @@ import NotFound from '../NotFound';
 import CategoryPage from '../../components/CategoryPage'; // todo: loadable
 import data from '../Home/data'; // todo: database
 
-const getCategoryById = (id, categories = data) => {
+function getCategoryById(id, categories = data) {
   for (const category of categories) {
     if (category.id === id) {
       return category;
@@ -19,9 +19,9 @@ const getCategoryById = (id, categories = data) => {
   }
 
   return null;
-};
+}
 
-const Category = () => {
+function Category() {
   const { id } = useParams();
   const category = getCategoryById(id);
 
@@ -34,6 +34,6 @@ const Category = () => {
   return (
     <CategoryPage name={name} products={products} categories={categories} />
   );
-};
+}
 
 export default Category;

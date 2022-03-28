@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl';
 import { AVAILABLE_LOCALES } from '../../../shared/constants/locales';
 import { LangContext } from '../IntlProvider';
 
-const LangSwitcher = () => {
+function LangSwitcher() {
   const { setLocale, locale } = useContext(LangContext);
   const intl = useIntl();
   const onChange = useCallback(
@@ -27,6 +27,6 @@ const LangSwitcher = () => {
       ))}
     </select>
   );
-};
+}
 
 export default LangSwitcher;

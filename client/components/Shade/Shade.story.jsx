@@ -12,24 +12,26 @@ export default {
   },
 };
 
-const Container = ({ children }) => (
-  <div style={{ display: 'flex' }}>{children}</div>
-);
+function Container({ children }) {
+  return <div style={{ display: 'flex' }}>{children}</div>;
+}
 
-const Card = ({ children }) => (
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '70px',
-      height: '30px',
-      background: '#000',
-    }}
-  >
-    {children}
-  </div>
-);
+function Card({ children }) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '70px',
+        height: '30px',
+        background: '#000',
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const Default = args => (
   <Container>

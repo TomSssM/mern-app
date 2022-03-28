@@ -8,22 +8,23 @@ import Home from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 import Category from '../../pages/Category';
 
-// todo: bring: React.StrictMode to this file
-const App = () => (
-  <IntlProvider>
-    <Router>
-      <Layout>
-        <ErrorBoundary>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/category/:id" component={Category} />
-            <Route path="*" component={NotFound} />
-          </Switch>
-          <Footer />
-        </ErrorBoundary>
-      </Layout>
-    </Router>
-  </IntlProvider>
-);
+function App() {
+  return (
+    <IntlProvider>
+      <Router>
+        <Layout>
+          <ErrorBoundary>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/category/:id" component={Category} />
+              <Route path="*" component={NotFound} />
+            </Switch>
+            <Footer />
+          </ErrorBoundary>
+        </Layout>
+      </Router>
+    </IntlProvider>
+  );
+}
 
 export default App;

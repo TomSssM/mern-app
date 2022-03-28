@@ -4,16 +4,16 @@ import './ProductImage.scss';
 import Shade from '../Shade';
 import { select } from '../../../shared/utils';
 
-export const IMAGE_SIZES = ['fit', 'full'];
+const IMAGE_SIZES = ['fit', 'full'];
 
 // todo: use PropTypes and storybook
 
-const ProductImage = ({
+function ProductImage({
   src,
   position: { x: posX, y: posY } = {},
   size: sizeRaw = 'fit',
   ...rest
-}) => {
+}) {
   const size = select(sizeRaw, IMAGE_SIZES);
   return (
     <Shade {...rest}>
@@ -27,6 +27,6 @@ const ProductImage = ({
       />
     </Shade>
   );
-};
+}
 
 export default ProductImage;

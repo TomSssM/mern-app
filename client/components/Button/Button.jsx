@@ -4,24 +4,16 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 import Link from '../Link';
 
-const BaseLink = props => <Link {...props} theme="none" />;
+function BaseLink(props) {
+  return <Link {...props} theme="none" />;
+}
 
-const TYPE_TO_COMPONENT_MAP = {
-  button: 'button',
-  link: BaseLink,
-  router: BaseLink,
-};
+function Button({ type, size, theme, primary, uppercase, className, ...rest }) {
+  let Tag = 'button';
 
-const Button = ({
-  type,
-  size,
-  theme,
-  primary,
-  uppercase,
-  className,
-  ...rest
-}) => {
-  const Tag = TYPE_TO_COMPONENT_MAP[type];
+  if (type === 'link' || type === 'router') {
+    Tag = BaseLink;
+  }
 
   return (
     <Tag
@@ -39,7 +31,7 @@ const Button = ({
       {...rest}
     />
   );
-};
+}
 
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'link', 'router']),

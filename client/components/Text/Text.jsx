@@ -3,17 +3,19 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './Text.scss';
 
-const Text = ({ size, theme, className, ...rest }) => (
-  <span
-    className={classNames(
-      'Text',
-      `Text_size_${size}`,
-      `Text_theme_${theme}`,
-      className,
-    )}
-    {...rest}
-  />
-);
+function Text({ size, theme, className, ...rest }) {
+  return (
+    <span
+      className={classNames(
+        'Text',
+        `Text_size_${size}`,
+        `Text_theme_${theme}`,
+        className,
+      )}
+      {...rest}
+    />
+  );
+}
 
 Text.propTypes = {
   size: PropTypes.oneOf(['xm', 'm', 'l', 'xl']),

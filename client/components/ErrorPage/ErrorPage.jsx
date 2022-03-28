@@ -7,34 +7,37 @@ import RefreshButton from '../RefreshButton';
 import './ErrorPage.scss';
 import Heading from '../Heading';
 
-// todo ilyakortasov: rewrite to _just_ components
-const createErrorButton = Button => props => (
-  <Button className="ErrorPage-Button" {...props} />
-);
+function ErrorHomeButton() {
+  return <HomeButton className="ErrorPage-Button" />;
+}
 
-const ErrorHomeButton = createErrorButton(HomeButton);
+function ErrorRefreshButton() {
+  return <RefreshButton className="ErrorPage-Button" />;
+}
 
-const ErrorRefreshButton = createErrorButton(RefreshButton);
+function ButtonsContainer({ children }) {
+  return <div className="ErrorPage-ButtonsContainer">{children}</div>;
+}
 
-const ButtonsContainer = ({ children }) => (
-  <div className="ErrorPage-ButtonsContainer">{children}</div>
-);
+function Page404() {
+  return (
+    <ButtonsContainer>
+      <ErrorHomeButton primary />
+      <ErrorRefreshButton />
+    </ButtonsContainer>
+  );
+}
 
-const Page404 = () => (
-  <ButtonsContainer>
-    <ErrorHomeButton primary />
-    <ErrorRefreshButton />
-  </ButtonsContainer>
-);
+function Page500() {
+  return (
+    <ButtonsContainer>
+      <ErrorRefreshButton primary />
+      <ErrorHomeButton />
+    </ButtonsContainer>
+  );
+}
 
-const Page500 = () => (
-  <ButtonsContainer>
-    <ErrorRefreshButton primary />
-    <ErrorHomeButton />
-  </ButtonsContainer>
-);
-
-const ErrorPage = ({ code }) => {
+function ErrorPage({ code }) {
   const intl = useIntl();
   const isErrorCode = code >= 500 && code < 600;
   let explanation;
@@ -88,6 +91,6 @@ const ErrorPage = ({ code }) => {
       {!code && <Page500 />}
     </Main>
   );
-};
+}
 
 export default ErrorPage;

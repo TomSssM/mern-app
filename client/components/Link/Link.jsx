@@ -4,17 +4,19 @@ import { Link as RouterLink } from 'react-router-dom';
 import './Link.scss';
 import { select } from '../../../shared/utils';
 
-export const LINK_THEMES = ['default', 'none'];
+const LINK_THEMES = ['default', 'none'];
 
-const BaseLink = ({ to, children, ...rest }) => (
-  <a {...rest} href={typeof to === 'string' ? to : undefined}>
-    {children}
-  </a>
-);
+function BaseLink({ to, children, ...rest }) {
+  return (
+    <a {...rest} href={typeof to === 'string' ? to : undefined}>
+      {children}
+    </a>
+  );
+}
 
 // todo: use PropTypes and storybook
 
-const Link = ({
+function Link({
   className,
   target,
   onClick: onClickHandler,
@@ -24,7 +26,7 @@ const Link = ({
   pseudo = false,
   nofocus = false,
   ...rest
-}) => {
+}) {
   let Tag = RouterLink;
 
   if (type === 'link' || pseudo) {
@@ -51,6 +53,6 @@ const Link = ({
       {...rest}
     />
   );
-};
+}
 
 export default Link;

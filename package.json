@@ -17,7 +17,7 @@
     "prebuild": "npm run lint",
     "server": "nodemon server/index.js --exec babel-node --require dotenv/config",
     "client": "webpack serve --open --config webpack.dev.js",
-    "format": "prettier '.' '.*rc'",
+    "format": "prettier . '.*rc'",
     "lint": "npm-run-all lint:*",
     "lint:code": "eslint --ext .jsx,.js .",
     "lint:format": "npm run format -- --check",

@@ -7,8 +7,8 @@ import CardsContainer from '../CardsContainer';
 function CategoryCard({ id, name, className, ...rest }) {
   return (
     <Card
-      className={classNames('CategoryCard', className)}
       {...rest}
+      className={classNames('CategoryCard', className)}
       to={`/category/${id}`}
       height={140}
       width={300}

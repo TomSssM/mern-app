@@ -16,6 +16,7 @@ function IntlProvider({ children }) {
     switch (locale) {
       case 'en':
         return messagesInEnglish;
+      case DEFAULT_LOCALE:
       default:
         return messagesInRussian;
     }

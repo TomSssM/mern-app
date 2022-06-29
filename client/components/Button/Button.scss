@@ -1,9 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-$component: 'Button';
-
-.#{$component} {
+.Button {
   --button-text-active-color: var(--color-background);
 
   @extend %button-reset;
@@ -21,7 +19,7 @@ $component: 'Button';
   }
 
   // todo: happens because of "sideEffects" (maybe this is not a problem)
-  &.#{$component} {
+  &.Link {
     color: var(--color-primary);
 
     &_primary,

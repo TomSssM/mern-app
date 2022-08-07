@@ -32,13 +32,6 @@
     "precommit": "lint-staged",
     "prepare": "husky install"
   },
-  "keywords": [
-    "mern",
-    "app",
-    "react"
-  ],
-  "author": "TomSssM",
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.10",
@@ -105,5 +98,12 @@
     "*.{js,jsx}": "eslint --fix",
     "*.scss": "stylelint --fix",
     "*.{js,jsx,json,md}": "prettier --write"
-  }
+  },
+  "keywords": [
+    "mern",
+    "app",
+    "react"
+  ],
+  "author": "TomSssM",
+  "license": "ISC"
 }

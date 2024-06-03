@@ -5,10 +5,12 @@ import { DEFAULT_LOCALE } from '../../../shared/constants/locales';
 import messagesInRussian from '../../../public/locales/ru.json';
 import messagesInEnglish from '../../../public/locales/en.json';
 
+// TODO: rename: LanguageContext
 export const LangContext = createContext();
 
 const initialLocale = getInitialLocale();
 
+// TODO: rename: LanguageProvider
 function IntlProvider({ children }) {
   const [locale, setLocale] = useState(initialLocale);
 
@@ -16,9 +18,10 @@ function IntlProvider({ children }) {
     switch (locale) {
       case 'en':
         return messagesInEnglish;
-      case DEFAULT_LOCALE:
-      default:
+      case 'ru':
         return messagesInRussian;
+      default:
+        return messagesInEnglish;
     }
   }, [locale]);
 

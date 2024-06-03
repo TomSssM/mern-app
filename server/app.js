@@ -8,7 +8,7 @@ import cors from './middleware/cors';
 import config from '../config';
 import HttpError from '../shared/errors/HttpError';
 
-const { MONGO_URI, MONGO_DB_NAME, STATIC_PATH } = config;
+const { STATIC_PATH, MONGO_URI } = config;
 
 const app = express();
 
@@ -18,10 +18,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(router);
 
-const db = `${MONGO_URI}/${MONGO_DB_NAME}`;
-
 mongoose
-  .connect(db, {
+  .connect(MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

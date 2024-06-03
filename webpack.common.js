@@ -14,7 +14,7 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   optimization: {
     moduleIds: 'deterministic',

@@ -3,6 +3,7 @@ import { useIntl } from 'react-intl';
 import { AVAILABLE_LOCALES } from '../../../shared/constants/locales';
 import { LangContext } from '../IntlProvider';
 
+// TODO: isolate UI and app state management (probably in Footer component)
 function LangSwitcher() {
   const { setLocale, locale } = useContext(LangContext);
   const intl = useIntl();

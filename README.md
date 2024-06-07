@@ -52,6 +52,8 @@ npm run storybook
 <!--
 ## Deployment
 
+npm run deploy
+
 Add your MONGO_URI to the default.json file. Make sure you set an env var for that and the jwtSecret on deployment
 + see what other env vars are requisite in .env
 -->

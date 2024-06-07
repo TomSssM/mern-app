@@ -6,7 +6,11 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
-  "stylelint.validate": ["html", "scss"],
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false
+  },
+  "stylelint.validate": ["scss", "css"],
   "jest.autoRun": "off",
   "jest.enableCodeLens": false
 }

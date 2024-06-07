@@ -19,6 +19,9 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
+  "globals": {
+    "process": true
+  },
   "rules": {
     "curly": ["error", "all"],
     "no-console": ["error", { "allow": ["warn", "error"] }],

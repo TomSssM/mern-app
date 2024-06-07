@@ -1,8 +1,8 @@
 {
   "name": "mern-app",
-  "private": true,
   "version": "1.0.0",
   "description": "Usual MERN Application",
+  "private": true,
   "main": "build/server/index.js",
   "sideEffects": [
     "*.scss"

@@ -1,4 +1,5 @@
 const path = require('path');
+const { EnvironmentPlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -9,7 +10,8 @@ module.exports = {
   target: 'web',
   output: {
     path: path.join(__dirname, 'build', 'static'),
-    filename: '[name].[contenthash].bundle.js',
+    filename: '[name].[contenthash:8].bundle.js',
+    assetModuleFilename: 'assets/[name].[contenthash:8][ext][query]',
     clean: true,
     publicPath: '/',
   },
@@ -45,7 +47,7 @@ module.exports = {
                   useBuiltIns: 'usage',
                   corejs: 3,
                   modules: false,
-                  browserslistEnv: 'production',
+                  browserslistEnv: process.env.NODE_ENV || 'production',
                 },
               ],
             ],
@@ -67,6 +69,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new EnvironmentPlugin(['NODE_ENV']),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
       favicon: path.join(__dirname, 'public', 'favicon.ico'),

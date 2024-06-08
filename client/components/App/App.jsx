@@ -1,30 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ErrorBoundary from '../ErrorBoundary';
-import IntlProvider from '../IntlProvider';
-import Layout from '../Layout';
-import Footer from '../Footer';
-import Home from '../../pages/Home';
-import NotFound from '../../pages/NotFound';
-import Category from '../../pages/Category';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <IntlProvider>
-      <Router>
-        <Layout>
-          <ErrorBoundary>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/category/:id" component={Category} />
-              <Route path="*" component={NotFound} />
-            </Switch>
-            <Footer />
-          </ErrorBoundary>
-        </Layout>
-      </Router>
-    </IntlProvider>
-  );
+import ErrorBoundary from '../ErrorBoundary';
+import Routes from '../Routes';
+
+class App extends Component {
+  render() {
+    return (
+      <React.StrictMode>
+        <ErrorBoundary>
+          <Routes />
+        </ErrorBoundary>
+      </React.StrictMode>
+    );
+  }
 }
 
 export default App;

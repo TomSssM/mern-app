@@ -48,6 +48,50 @@
         ]
       }
     ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": [],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "unknown"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "server/**/*",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "shared/**/*",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "client/**/*",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off"
   },

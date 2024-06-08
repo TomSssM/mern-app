@@ -1,22 +1,5 @@
-%full-width {
-  margin: 0 calc(-1 * var(--main-offset));
-}
-
-%link-reset {
-  color: var(--color-primary);
-  font-family: inherit;
-  outline: none;
-  text-decoration: none;
-}
-
-%button-reset {
-  border: unset;
-  background-color: var(--color-background);
-  color: var(--color-primary);
-  cursor: pointer;
-  font-family: inherit;
-  outline: none;
-}
+// TODO: refactor
+// TODO: maybe font-size-primary or font-family-primary and use on body?
 
 @mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
   position: absolute;

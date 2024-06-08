@@ -1,8 +1,16 @@
-import React from 'react';
-import ErrorPage from '../../components/ErrorPage';
+import React, { Component } from 'react';
 
-function NotFound() {
-  return <ErrorPage code={404} />;
+import ErrorInfo from '../../components/ErrorInfo';
+import Layout from '../../components/Layout';
+
+class NotFound extends Component {
+  render() {
+    return (
+      <Layout>
+        <ErrorInfo code={404} />
+      </Layout>
+    );
+  }
 }
 
 export default NotFound;

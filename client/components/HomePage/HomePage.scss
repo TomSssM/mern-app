@@ -1,9 +1,0 @@
-@import '../../styles/mixins';
-
-.HomePage {
-  @extend %full-width;
-
-  &-Categories {
-    margin-top: var(--size-xl);
-  }
-}

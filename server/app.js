@@ -1,21 +1,23 @@
 import path from 'path';
+
+import cookieParser from 'cookie-parser';
 import express from 'express';
 import mongoose from 'mongoose';
-import cookieParser from 'cookie-parser';
-import router from './routes';
-import xsrf from './middleware/xsrf';
-import cors from './middleware/cors';
+
 import config from '../config';
-import HttpError from '../shared/errors/HttpError';
+
+import corsMiddleware from './middleware/corsMiddleware';
+import errorMiddleware from './middleware/errorMiddleware';
+import router from './routes';
 
 const { STATIC_PATH, MONGO_URI } = config;
 
 const app = express();
 
-app.use(cors);
-app.use(xsrf);
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(corsMiddleware);
 app.use(router);
 
 mongoose
@@ -40,15 +42,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.use((error, req, res, next) => {
-  if (error instanceof HttpError) {
-    res.status(error.status).json({
-      message: error.message,
-    });
-  } else {
-    console.error('error', error);
-    res.status(500).end();
-  }
-});
+app.use(errorMiddleware);
 
 export default app;

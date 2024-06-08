@@ -1,6 +1,8 @@
 import HttpError from '../../shared/errors/HttpError';
 
 function errorMiddleware(error, req, res, next) {
+  // TODO: perhaps rename status -> statusCode
+
   const status = error instanceof HttpError ? error.status : 500;
 
   res.status(status);

@@ -20,6 +20,7 @@ class ErrorBoundary extends Component {
   componentDidCatch(error) {
     const { onError } = this.props;
 
+    // TODO: onError is superfluous here
     // TODO: set error to redux state
 
     onError?.(error);

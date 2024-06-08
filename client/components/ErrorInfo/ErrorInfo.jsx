@@ -33,6 +33,7 @@ function Page500() {
   );
 }
 
+// TODO: propTypes
 // TODO: class Component
 // TODO: refactor
 function ErrorInfo({ code }) {

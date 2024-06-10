@@ -21,21 +21,6 @@ import Layout from '../../components/Layout';
   </>
 */
 
-/*
-* OR (remember propTypes then):
-  ... here comes the logic for auth check and redirect
-
-  <>
-    <Helmet>
-      <title>Tasks Dashboard</title>
-    </Helmet>
-
-    <Layout header={<Header />}>
-      <Tasks />
-    </Layout>
-  </>
-*/
-
 class Dashboard extends Component {
   render() {
     return <Layout>Dashboard</Layout>;

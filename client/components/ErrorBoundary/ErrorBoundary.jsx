@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import ErrorInfo from '../ErrorInfo';
+import Layout from '../Layout';
+
+// TODO: connect to redux
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -11,32 +14,30 @@ class ErrorBoundary extends Component {
     };
   }
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(error) {
     return {
+      error,
       hasError: true,
     };
   }
 
   componentDidCatch(error) {
-    const { onError } = this.props;
-
-    // TODO: onError is superfluous here
-    // TODO: set error to redux state
-
-    onError?.(error);
+    console.error(error);
   }
 
   render() {
-    const { hasError } = this.state;
-    const { children } = this.props;
-
-    // TODO: get error from redux state and pass to ErrorInfo
+    const hasError = this.state.hasError || this.props.hasError;
+    const error = this.state.error || this.props.error;
 
     if (hasError) {
-      return <ErrorInfo />;
+      return (
+        <Layout>
+          <ErrorInfo statusCode={error.statusCode} />
+        </Layout>
+      );
     }
 
-    return children;
+    return this.props.children;
   }
 }
 

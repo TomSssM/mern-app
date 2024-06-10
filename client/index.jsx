@@ -7,4 +7,11 @@ import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// TODO: redux Provider
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root'),
+);

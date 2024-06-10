@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from '../../pages/Dashboard';
 import NotFound from '../../pages/NotFound';
 
-// TODO: page: Auth
+// TODO: page: Login
 // TODO: page: Register
 
 class Routes extends Component {

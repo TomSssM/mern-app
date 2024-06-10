@@ -1,13 +1,11 @@
 import HttpError from '../../shared/errors/HttpError';
 
 function errorMiddleware(error, req, res, next) {
-  // TODO: perhaps rename status -> statusCode
+  const statusCode = error instanceof HttpError ? error.statusCode : 500;
 
-  const status = error instanceof HttpError ? error.status : 500;
+  res.status(statusCode);
 
-  res.status(status);
-
-  if (process.env.NODE_ENV === 'production' && status === 500) {
+  if (process.env.NODE_ENV === 'production' && statusCode === 500) {
     console.error('error', error);
 
     res.json({

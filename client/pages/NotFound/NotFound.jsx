@@ -7,7 +7,7 @@ class NotFound extends Component {
   render() {
     return (
       <Layout>
-        <ErrorInfo code={404} />
+        <ErrorInfo statusCode={404} />
       </Layout>
     );
   }

@@ -36,16 +36,16 @@ function Page500() {
 // TODO: propTypes
 // TODO: class Component
 // TODO: refactor
-function ErrorInfo({ code }) {
-  const isErrorCode = code >= 500 && code < 600;
+function ErrorInfo({ statusCode }) {
+  const isErrorCode = statusCode >= 500 && statusCode < 600;
   let explanation;
   let title;
 
-  if (isErrorCode || !code) {
+  if (isErrorCode || !statusCode) {
     explanation = 'We know about the error and be sure to fix it in no time!';
   }
 
-  if (code === 404) {
+  if (statusCode === 404) {
     title = 'Page not found';
 
     explanation = "You came to the page that doesn't appear to exist";
@@ -56,16 +56,16 @@ function ErrorInfo({ code }) {
   return (
     <main className="ErrorPage">
       <span>{title}</span>
-      {code && <span className="ErrorPage-Code">{code}</span>}
-      {!code && (
+      {statusCode && <span className="ErrorPage-Code">{statusCode}</span>}
+      {!statusCode && (
         <span className="ErrorPage-ErrorMessage">Something went wrong...</span>
       )}
       {explanation && (
         <span className="ErrorPage-Explanation">{explanation}</span>
       )}
-      {code === 404 && <Page404 />}
+      {statusCode === 404 && <Page404 />}
       {isErrorCode && <Page500 />}
-      {!code && <Page500 />}
+      {!statusCode && <Page500 />}
     </main>
   );
 }

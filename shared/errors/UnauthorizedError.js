@@ -4,7 +4,7 @@ class UnauthorizedError extends HttpError {
   constructor(message = 'Unauthorized') {
     super({
       message,
-      status: 401,
+      statusCode: 401,
     });
   }
 }

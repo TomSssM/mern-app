@@ -4,7 +4,7 @@ class BadRequestError extends HttpError {
   constructor(message = 'Bad Request') {
     super({
       message,
-      status: 400,
+      statusCode: 400,
     });
   }
 }

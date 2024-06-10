@@ -4,7 +4,7 @@ class ForbiddenError extends HttpError {
   constructor(message = 'Forbidden') {
     super({
       message,
-      status: 403,
+      statusCode: 403,
     });
   }
 }

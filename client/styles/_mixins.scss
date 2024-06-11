@@ -1,10 +1,10 @@
-// TODO: refactor
-// TODO: maybe font-size-primary or font-family-primary and use on body?
+@mixin text-body-regular() {
+  font-size: 16px;
+  line-height: 17px;
+}
 
-@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
-  position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+@mixin text-body-bold() {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 17px;
 }

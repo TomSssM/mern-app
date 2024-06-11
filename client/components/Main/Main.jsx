@@ -3,20 +3,20 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './Layout.scss';
+import './Main.scss';
 
 // TODO: test className can be appended
 
-class Layout extends Component {
+class Main extends Component {
   render() {
     const { className, children } = this.props;
 
-    return <div className={classNames('Layout', className)}>{children}</div>;
+    return <main className={classNames('Main', className)}>{children}</main>;
   }
 }
 
-Layout.propTypes = {
+Main.propTypes = {
   className: PropTypes.string,
 };
 
-export default Layout;
+export default Main;

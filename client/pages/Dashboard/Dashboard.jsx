@@ -23,11 +23,27 @@ import Layout from '../../components/Layout';
 
 // TODO: also this:
 /*
-  import Spinner from '../components/Spinner';
+  import Loading from '../pages/Loading';
 
   if (isLoading) {
-    return <Spinner />;
+    return <Loading />;
   }
+
+  * Loading:
+
+  import Spinner from '../components/Spinner';
+
+  return (
+    <>
+      <Helmet>
+        <title>loading...</title>
+      </Helmet>
+
+      <Layout>
+        <Spinner />
+      </Layout>
+    </>
+  );
 */
 
 class Dashboard extends Component {

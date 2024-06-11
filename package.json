@@ -29,8 +29,7 @@
     "prestart": "npm run build",
     "prebuild": "npm run lint",
     "predeploy": "npm run build",
-    "precommit": "lint-staged",
-    "prepare": "husky install"
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
@@ -75,7 +74,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.1",
-    "husky": "^6.0.0",
+    "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
@@ -95,6 +94,11 @@
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint --fix",

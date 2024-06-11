@@ -21,6 +21,15 @@ import Layout from '../../components/Layout';
   </>
 */
 
+// TODO: also this:
+/*
+  import Spinner from '../components/Spinner';
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+*/
+
 class Dashboard extends Component {
   render() {
     return <Layout>Dashboard</Layout>;

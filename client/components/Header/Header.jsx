@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 
 import './Header.scss';
 
-// TODO: test className can be appended
+// TODO: write code
 
 class Header extends Component {
   render() {
     const { className } = this.props;
 
-    return <header className={classNames('Header', className)} />;
+    return <header className={classNames('Header', className)}>Header</header>;
   }
 }
 

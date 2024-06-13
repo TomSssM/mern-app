@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 
 import './Layout.scss';
 
-// TODO: test className can be appended
-
 class Layout extends Component {
   render() {
     const { className, children } = this.props;

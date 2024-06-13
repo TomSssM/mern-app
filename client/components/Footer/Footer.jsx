@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-// TODO: test className can be appended
-// TODO: styles
+import './Footer.scss';
+
+// TODO: write code
 
 class Footer extends Component {
   render() {
     const { className } = this.props;
 
-    return <footer className={classNames('Footer', className)} />;
+    return <footer className={classNames('Footer', className)}>Footer</footer>;
   }
 }
 

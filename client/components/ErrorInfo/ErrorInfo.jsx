@@ -36,6 +36,7 @@ function Page500() {
 // TODO: propTypes
 // TODO: class Component
 // TODO: refactor
+// TODO: 1) only statusCode is passed 2) both statusCode and message is passed
 function ErrorInfo({ statusCode }) {
   const isErrorCode = statusCode >= 500 && statusCode < 600;
   let explanation;

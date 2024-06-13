@@ -1,9 +1,31 @@
-@mixin text-body-regular() {
+@mixin heading-regular() {
+  font-size: 80px;
+  line-height: 90px;
+}
+
+@mixin heading-bold() {
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 90px;
+}
+
+@mixin title-regular() {
+  font-size: 24px;
+  line-height: 21px;
+}
+
+@mixin title-bold() {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+@mixin text-regular() {
   font-size: 16px;
   line-height: 17px;
 }
 
-@mixin text-body-bold() {
+@mixin text-bold() {
   font-size: 16px;
   font-weight: bold;
   line-height: 17px;

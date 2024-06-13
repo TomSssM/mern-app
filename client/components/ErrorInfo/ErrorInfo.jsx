@@ -1,74 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// TODO: refactor styles:
+import PropTypes from 'prop-types';
+
+import { STATUS_CODE_TO_TITLE_MAP } from './constants';
+
 import './ErrorInfo.scss';
 
-function ErrorHomeButton() {
-  return <span className="ErrorPage-Button" />;
-}
+class ErrorInfo extends Component {
+  render() {
+    const { statusCode, title, message } = this.props;
 
-function ErrorRefreshButton() {
-  return <span className="ErrorPage-Button" />;
-}
-
-function ButtonsContainer({ children }) {
-  return <div className="ErrorPage-ButtonsContainer">{children}</div>;
-}
-
-function Page404() {
-  return (
-    <ButtonsContainer>
-      <ErrorHomeButton primary />
-      <ErrorRefreshButton />
-    </ButtonsContainer>
-  );
-}
-
-function Page500() {
-  return (
-    <ButtonsContainer>
-      <ErrorRefreshButton primary />
-      <ErrorHomeButton />
-    </ButtonsContainer>
-  );
-}
-
-// TODO: propTypes
-// TODO: class Component
-// TODO: refactor
-// TODO: 1) only statusCode is passed 2) both statusCode and message is passed
-function ErrorInfo({ statusCode }) {
-  const isErrorCode = statusCode >= 500 && statusCode < 600;
-  let explanation;
-  let title;
-
-  if (isErrorCode || !statusCode) {
-    explanation = 'We know about the error and be sure to fix it in no time!';
+    return (
+      <div className="ErrorInfo">
+        <span className="ErrorInfo-StatusCode">{statusCode}</span>
+        <span className="ErrorInfo-Title">
+          {title ?? STATUS_CODE_TO_TITLE_MAP[statusCode]}
+        </span>
+        {message && <span className="ErrorInfo-Message">{message}</span>}
+      </div>
+    );
   }
-
-  if (statusCode === 404) {
-    title = 'Page not found';
-
-    explanation = "You came to the page that doesn't appear to exist";
-  } else {
-    title = 'Oops...';
-  }
-
-  return (
-    <main className="ErrorPage">
-      <span>{title}</span>
-      {statusCode && <span className="ErrorPage-Code">{statusCode}</span>}
-      {!statusCode && (
-        <span className="ErrorPage-ErrorMessage">Something went wrong...</span>
-      )}
-      {explanation && (
-        <span className="ErrorPage-Explanation">{explanation}</span>
-      )}
-      {statusCode === 404 && <Page404 />}
-      {isErrorCode && <Page500 />}
-      {!statusCode && <Page500 />}
-    </main>
-  );
 }
+
+ErrorInfo.propTypes = {
+  statusCode: PropTypes.oneOf([500, 404, 403, 401, 400]),
+  title: PropTypes.string,
+  message: PropTypes.string,
+};
+
+ErrorInfo.defaultProps = {
+  statusCode: 500,
+};
 
 export default ErrorInfo;

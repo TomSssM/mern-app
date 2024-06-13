@@ -1,48 +1,25 @@
-.ErrorPage {
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.ErrorInfo {
   display: flex;
-  max-width: 400px;
   flex-flow: column nowrap;
   align-items: center;
-  align-self: center;
-  justify-content: center;
-  text-align: center;
 
-  & &-Heading {
-    margin-top: var(--size-m);
+  &-StatusCode {
+    @include heading-bold;
+
+    color: #374757;
   }
 
-  &-ButtonsContainer {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: stretch;
+  &-Title {
+    @include title-regular;
+
+    margin-top: $gap-8;
   }
 
-  &-Button {
-    margin-top: var(--size-m);
-  }
-
-  &-ErrorMessage,
-  &-Explanation {
-    text-transform: lowercase;
-  }
-
-  &-ErrorMessage {
-    color: var(--color-secondary);
-  }
-
-  &-Explanation {
-    margin: var(--size-xl) 0;
-  }
-
-  &-Code {
-    color: var(--color-inactive);
-    font: {
-      size: 90px;
-      weight: bold;
-    }
-  }
-
-  &-Code + &-ButtonsContainer {
-    margin-top: 40px;
+  &-Message {
+    margin-top: $gap-12;
+    color: $color-text-secondary;
   }
 }

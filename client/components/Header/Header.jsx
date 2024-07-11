@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import './Header.scss';
 
-// TODO: write code
+// TODO: write code: Header directly renders NavBar from reactstrap and optionally appends its own className
 
 class Header extends Component {
   render() {
